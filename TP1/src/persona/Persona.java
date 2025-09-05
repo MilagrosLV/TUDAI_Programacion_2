@@ -11,10 +11,10 @@ public class Persona {
 	
 	//CONSTRUCTORES
 	public Persona(String dni) {
-		this("N", "N", dni, edad, LocalDate.of(2000, 1, 1), 'F', 1, 1);
+		this("N", "N", dni, 30, LocalDate.of(2000, 1, 1), 'F', 1, 1);
 	}
 	public Persona(String nombre, String apellido, String dni) {
-		this(nombre, apellido, dni, edad, LocalDate.of(2000, 1, 1), 'F', 1, 1);
+		this(nombre, apellido, dni, 30, LocalDate.of(2000, 1, 1), 'F', 1, 1);
 	}
 	public Persona(String nombre, String apellido, String dni, int edad) {
 		this(nombre, apellido, dni, edad, LocalDate.of(2000, 1, 1), 'F', 1, 1);
@@ -52,6 +52,12 @@ public class Persona {
 	}
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
+	}
+	public int getEdad() {
+		return edad;
+	}
+	public void setEdad(int edad) {
+		this.edad = edad;
 	}
 	public LocalDate getFechaActual() {
 		return fechaActual;
@@ -93,50 +99,47 @@ public class Persona {
 	}
 	
 	public boolean estaEnForma() {
-		return ((18.5<masaCorporal()) && (masaCorporal()<25));
+		return 18.5<masaCorporal() && masaCorporal()<25;
 	}
 	
 	public boolean esSuCumpleanios() {
-		return ((fechaActual.getMonthValue() == fechaNacimiento.getMonthValue()) && (fechaActual.getDayOfMonth() == fechaNacimiento.getDayOfMonth()));
+		return fechaActual.getMonthValue() == fechaNacimiento.getMonthValue() && fechaActual.getDayOfMonth() == fechaNacimiento.getDayOfMonth();
 	}
 	
 	public boolean esMayorEdad() {
 		final int MIN_ADULTO=18; 
-		return (getEdad()>MIN_ADULTO);
+		return getEdad()>=MIN_ADULTO;
 	}
 	
 	public boolean puedeVotar() {
 		final int MIN_EDAD_VOTAR=16; 
-		return (getEdad()>MIN_EDAD_VOTAR);
+		return getEdad()>=MIN_EDAD_VOTAR;
 	}
 
 	public boolean tieneEdadCoherente() {
 		int edad = fechaActual.getYear()-fechaNacimiento.getYear();
 		
-		if(fechaActual.getMonthValue() < fechaNacimiento.getMonthValue()) { //Mese antes
+		if(fechaActual.getMonthValue() < fechaNacimiento.getMonthValue()) { //Meses antes
 			edad--;
-			return (getEdad() == edad);
-		}
-		} else if (fechaActual.getMonthValue() == fechaNacimiento.getMonthValue()){
+		} else if (fechaActual.getMonthValue() == fechaNacimiento.getMonthValue()){//Mes de cumple
 			if(fechaActual.getDayOfMonth() < fechaNacimiento.getDayOfMonth()) { //Antes del cumple
 				edad--;
+			} else { //Despues o el mismo dia del cumple
 				return (getEdad() == edad);
 			}
-		} else {
-			return (getEdad() == edad);
 		}
+		return (getEdad() == edad);
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Persona [nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", edad=" + edad
+				+ ", fechaNacimiento=" + fechaNacimiento + ", fechaActual=" + fechaActual + ", sexo=" + sexo + ", peso="
+				+ peso + ", altura=" + altura + "]";
 	}
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 }
