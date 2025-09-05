@@ -1,5 +1,9 @@
 package agendaPersonal;
 
-public class AgendaPersonal {
+import java.util.ArrayList;
 
+public class AgendaPersonal {
+	private Persona usuario;
+	private ArrayList<Reunion> reuniones;
+	
 }
