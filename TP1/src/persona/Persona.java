@@ -95,7 +95,7 @@ public class Persona {
 	
 	//OTHER METHODS
 	public double masaCorporal() {
-		return getPeso()/Math.sqrt(getAltura());
+		return getPeso()/Math.pow(getAltura(), 2);
 	}
 	
 	public boolean estaEnForma() {
