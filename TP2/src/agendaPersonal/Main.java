@@ -19,25 +19,15 @@ public class Main {
 		Reunion r3 = new Reunion("Aula 3", "Interfaces", LocalTime.of(1, 30), LocalDateTime.of(2025, 9, 8, 15, 0));
 		
 		//Agregar Participantes a las Reuniones
-		r1.agregarPersona(p1);r1.agregarPersona(p2);r1.agregarPersona(p3);
+		r1.agregarPersona(p1);r1.agregarPersona(p2);r1.agregarPersona(p3);r1.agregarPersona(p1);
 		r2.agregarPersona(p4);r2.agregarPersona(p2);r2.agregarPersona(p3);
 		r3.agregarPersona(p1);r3.agregarPersona(p2);r3.agregarPersona(p3);
 		
 		//Agregar Reuniones a la AgendaPersonal
 		aa.agregarReunion(r1);aa.agregarReunion(r2);aa.agregarReunion(r3);
 		
-		/*DEBUG
-		System.out.println(r1.getFechaHoraInicio());
-		System.out.println(r1.getFechaHoraFin());
-		System.out.println(r1.getDuracion());
-
-		System.out.println(r2.getFechaHoraInicio());
-		System.out.println(r2.getFechaHoraFin());
-		System.out.println(r2.getDuracion());
+		System.out.println(aa.toString());
 		
-		System.out.println(r3.getFechaHoraInicio());
-		System.out.println(r3.getFechaHoraFin());
-		System.out.println(r3.getDuracion());*/
 		
 	}
 

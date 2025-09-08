@@ -57,12 +57,11 @@ public class Reunion {
 		int cantPersonaRepetida = 0;
 		for(Persona pp : participantes) {
 			if(p.equals(pp)) {
-				System.out.println("Este participante ya se anotó");
 				cantPersonaRepetida++;
 			}
 		}
-		if(cantPersonaRepetida < 0) {
-			System.out.println("No se pudo agregar al participante");
+		if(cantPersonaRepetida > 0) {
+			System.out.println(p.getNombre() + " ya se anotó. ");
 		} else {
 			participantes.add(p);
 		}
