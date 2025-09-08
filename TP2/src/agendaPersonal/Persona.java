@@ -4,7 +4,6 @@ public class Persona {
 	private String nombre, mail, telefono;
 
 	public Persona(String nombre, String mail, String telefono) {
-		super();
 		this.nombre = nombre;
 		this.mail = mail;
 		this.telefono = telefono;
