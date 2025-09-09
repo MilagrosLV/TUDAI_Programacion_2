@@ -6,8 +6,8 @@ public class Gasto {
 	
 	//CONSTRUCTOR
 	public Gasto(String nombre, double precioGasto) {
-		this.nombre = nombre;
-		this.precioGasto = precioGasto;
+		setNombre(nombre);
+		setPrecioGasto(precioGasto);
 	}
 	
 	//getters and setters methods
