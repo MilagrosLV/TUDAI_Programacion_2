@@ -6,11 +6,11 @@ public class Main {
 		//Iterations
 		Pais pp = new Pais("Argentina");
 		
-		Impuesto imp1 = new Impuesto("Imp1", 60);
-		Impuesto imp2 = new Impuesto("Imp2", 20);
-		Impuesto imp3 = new Impuesto("Imp3", 35);
-		Impuesto imp4 = new Impuesto("Imp4", 65);
-		Impuesto imp5 = new Impuesto("Imp5", 12);
+		Double imp1 = new Double(60);
+		Double imp2 = new Impuesto("Imp2", 20);
+		Double imp3 = new Impuesto("Imp3", 35);
+		Double imp4 = new Impuesto("Imp4", 65);
+		Double imp5 = new Impuesto("Imp5", 12);
 		
 		Gasto g1 = new Gasto("Carreteras", 70000000);
 		Gasto g2 = new Gasto("Educacion Publica", 200000);

@@ -5,17 +5,18 @@ import java.util.ArrayList;
 public class Ciudad {
 	private String nombre;
 	private int cantHabitantes;
-	private ArrayList<Impuesto> impuestos;
-	private ArrayList<Gasto> gastos;
+	private ArrayList<Double>impuestos;
+	private ArrayList<Double>gastos;
 	
 	//Constructor
-	public Ciudad(String nombre, int cantHabitantes) {
+	public Ciudad(String nombre, int cantHabitantes, ArrayList<Double> impuestos, ArrayList<Double> gastos) {
 		setNombre(nombre);
 		setCantHabitantes(cantHabitantes);
-		this.impuestos = new ArrayList<>();
-		this.gastos = new ArrayList<>();
+		this.impuestos = impuestos;
+		this.gastos = gastos;
 	}
-	
+
+
 	//Getters and Setters methods
 	public String getNombre() {
 		return nombre;
@@ -29,44 +30,30 @@ public class Ciudad {
 	public void setCantHabitantes(int cantHabitantes) {
 		this.cantHabitantes = cantHabitantes;
 	}
+	public ArrayList<Double> getImpuestos() {
+		ArrayList<Double> copiaImpuestos = new ArrayList<>();
+		copiaImpuestos = this.impuestos;		
+		return copiaImpuestos;
+	}
+	public ArrayList<Double> getGastos() {
+		ArrayList<Double> copiaGastos = new ArrayList<>();
+		copiaGastos = this.impuestos;		
+		return copiaGastos;
+	}
 	
 	//Other methods
-	public void agregarImpuesto(Impuesto i) {
-		boolean impuestoRepetido = false;
-		for(Impuesto ii : impuestos) {
-			if(i.equals(ii)) {
-				impuestoRepetido=true;
-			}
-		}
-		if(!impuestoRepetido) {
-			impuestos.add(i);
-		}
-	}
-	
-	public void agregarGasto(Gasto g) {
-		boolean gastoRepetido = false;
-		for(Gasto gg : gastos) {
-			if(g.equals(gg)) {
-				gastoRepetido = true;
-			}
-		}
-		if(!gastoRepetido) {
-			gastos.add(g);
-		}
-	}
-	
 	public double montoTotalRecaudado() {
 		double suma = 0;
-		for(Impuesto ii : impuestos) {
-			suma += (ii.getMontoHabitante()*cantHabitantes);
+		for(Double ii : impuestos) {
+			suma += ii;
 		}
 		return suma;
 	}
 	
 	public double montoTotalGastos() {
 		double suma = 0;
-		for(Gasto gg : gastos) {
-			suma += gg.getPrecioGasto();
+		for(Double gg : gastos) {
+			suma += gg;
 		}
 		return suma;
 	}
@@ -75,11 +62,14 @@ public class Ciudad {
 		return (montoTotalGastos()>montoTotalRecaudado());
 	}
 
+
 	@Override
 	public String toString() {
-		return "Ciudad [nombre=" + nombre + ", cantHabitantes=" + cantHabitantes + ", impuestos=" + impuestos
-				+ ", gastos=" + gastos + "]";
+		return "Ciudad [getNombre()=" + getNombre() + ", getCantHabitantes()=" + getCantHabitantes()
+				+ ", montoTotalRecaudado()=" + montoTotalRecaudado() + ", montoTotalGastos()=" + montoTotalGastos()
+				+ ", estaEnDeficit()=" + estaEnDeficit() + "]";
 	}
+
 	
 	
 	
