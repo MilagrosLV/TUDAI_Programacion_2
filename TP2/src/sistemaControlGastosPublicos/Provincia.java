@@ -21,6 +21,17 @@ public class Provincia {
 		this.nombre = nombre;
 	}
 	
-	
+	//Other methods
+	public void agregarCiudad(Ciudad c) {
+		boolean seRepite = false;
+		for(Ciudad cc : ciudades) {
+			if(c.equals(cc)) {
+				seRepite = true;
+			}
+		}
+		if(!seRepite) {
+			ciudades.add(c);
+		}
+	}
 	
 }
