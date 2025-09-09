@@ -74,6 +74,12 @@ public class Ciudad {
 	public boolean estaEnDeficit() {
 		return (montoTotalGastos()>montoTotalRecaudado());
 	}
+
+	@Override
+	public String toString() {
+		return "Ciudad [nombre=" + nombre + ", cantHabitantes=" + cantHabitantes + ", impuestos=" + impuestos
+				+ ", gastos=" + gastos + "]";
+	}
 	
 	
 	

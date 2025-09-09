@@ -34,4 +34,31 @@ public class Provincia {
 		}
 	}
 	
+	public boolean masDeLaMitadCiudadesEnDeficit() {
+		int cantCiudadEnDeficit = 0;
+		for(Ciudad cc : ciudades) {
+			if(cc.estaEnDeficit()) {
+				cantCiudadEnDeficit++;
+			}
+		}
+		return cantCiudadEnDeficit>(ciudades.size()/2);
+	}
+	
+	public ArrayList<Ciudad> ciudadesEnDeficit() {
+		ArrayList<Ciudad> ciudadesEnDeficit = new ArrayList<>();
+		for(Ciudad cc : ciudades) {
+			if(cc.estaEnDeficit()) {
+				ciudadesEnDeficit.add(cc);
+			}
+		}
+		return ciudadesEnDeficit;
+	}
+
+	@Override
+	public String toString() {
+		return "Provincia [nombre=" + nombre + ", ciudades=" + ciudades + "]";
+	}
+	
+	
+	
 }
