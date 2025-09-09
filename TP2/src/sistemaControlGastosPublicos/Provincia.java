@@ -8,7 +8,7 @@ public class Provincia {
 	private ArrayList<Ciudad> ciudades;
 	
 	//Constructor
-	public Provincia(String nombre, ArrayList<Ciudad> ciudades) {
+	public Provincia(String nombre) {
 		setNombre(nombre);
 		this.ciudades = new ArrayList<>();
 	}

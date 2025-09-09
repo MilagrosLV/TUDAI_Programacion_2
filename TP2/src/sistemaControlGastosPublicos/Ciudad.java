@@ -9,7 +9,7 @@ public class Ciudad {
 	private ArrayList<Gasto> gastos;
 	
 	//Constructor
-	public Ciudad(String nombre, int cantHabitantes, ArrayList<Impuesto> impuestos, ArrayList<Gasto> gastos) {
+	public Ciudad(String nombre, int cantHabitantes) {
 		setNombre(nombre);
 		setCantHabitantes(cantHabitantes);
 		this.impuestos = new ArrayList<>();
