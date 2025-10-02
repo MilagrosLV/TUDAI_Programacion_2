@@ -27,11 +27,16 @@ public class Pais {
 		}
 	}
 	
-	public void ciudadesEnDeficit() {
+	public void getCiudadesEnDeficit() {
 		for(Provincia pp : provincias) {
 			if(pp.ciudadesEnDeficit() != null) {
 				ciudadesEnDeficit.addAll(pp.ciudadesEnDeficit());
 			}
 		}
+	}
+	public ArrayList<Ciudad> getCiudadesEnDeficit() {
+		ArrayList<Ciudad> copiaCiudadesEnDeficit = new ArrayList<>();
+		copiaCiudadesEnDeficit = this.ciudadesEnDeficit;		
+		return copiaCiudadesEnDeficit;
 	}
 }
