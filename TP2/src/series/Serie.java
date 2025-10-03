@@ -1,82 +1,117 @@
 package series;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Serie {
-	//ATTRIBUTES
-	private String titulo, descripcion, creador, genero;
-	private int cantEpVistos=0, cantMaxTemp, cantTemp = 0;
-	private ArrayList<Temporada> temporadas;
-	
-	//CONSTRUCTOR
-	public Serie(String titulo, String descripcion, String creador, String genero, int cantMaxTemp) {
-		this.cantMaxTemp = cantMaxTemp;
-		this.titulo = titulo;
-		this.descripcion = descripcion;
-		this.creador = creador;
-		this.genero = genero;
-		this.temporadas = new ArrayList<>(this.cantMaxTemp);
-	}
 
-	//GETTERS AND SETTERS METHODS
-	public String getTitulo() {
+    private String titulo;
+    private String descripcion;
+    private String autor;
+    private String genero;
+    private List<Temporada> temporadas;
+
+    public Serie(String titulo, String descripcion, String autor, String genero){
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.autor = autor;
+        this.genero = genero;
+        this.temporadas = new ArrayList<Temporada>();
+    }
+
+     
+    //GETTERS Y SETTERS
+    public String getTitulo() {
 		return titulo;
 	}
+
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
+
 	public String getDescripcion() {
 		return descripcion;
 	}
+
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	public String getCreador() {
-		return creador;
+
+	public String getAutor() {
+		return autor;
 	}
-	public void setCreador(String creador) {
-		this.creador = creador;
+
+	public void setAutor(String autor) {
+		this.autor = autor;
 	}
+
 	public String getGenero() {
 		return genero;
 	}
+
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
 
+	public List<Temporada> getTemporadas() {
+		return temporadas;
+	}
 
-	//OTHER METHODS
-	public void agregarTemporada(Temporada e) {
-		if(cantTemp<cantMaxTemp) {
-			temporadas.add(cantTemp, e);
-			this.cantTemp++;
-		} else {
-			System.out.println("No se pudo agregar la Temp a la Serie");
-		}
+	public void setTemporadas(List<Temporada> temporadas) {
+		this.temporadas = temporadas;
 	}
-	
-	public int cantEpVistosSerie() {
-		for(Temporada tt : temporadas) {
-			cantEpVistos += tt.cantEpVistosTemp();
-		}
-		return cantEpVistos;
+
+     //OTROS METODOS
+     public int cantVistosTemporada(int numTemporada){
+         //Devolver la cantidad de episodios vistos para un numero de temporada
+         return temporadas.get(numTemporada).cantEpisodiosVistos();
+     }
+
+      public int cantVistos(){
+         int cantEpisodios = 0;
+         for (Temporada t : temporadas) {//Para cada Temporada t, que esta en this.temporadas
+                 cantEpisodios += t.cantEpisodiosVistos();
+         }
+         return cantEpisodios;
+     }
+  	public double promedioCalifTemporada( int numTemporada){
+        //Devolver el promedio de calificaciones para una temporada
+        return temporadas.get(numTemporada).promedioCalificacionesEpisodiosVistos();
+    }
+
+     public double promedioCalifSerie(){
+        //Devolver el promedio de calificaciones de toda la serie
+    	double sumaCalificacionesTemp = 0;
+    	for(Temporada t : temporadas) {
+    		sumaCalificacionesTemp += t.promedioCalificacionesEpisodiosVistos();
+    	}
+        return (sumaCalificacionesTemp/temporadas.size());
+     }
+     
+     public boolean seVioTodaLaSerie() {
+    	 boolean seVio = true;
+    	 for(Temporada t : temporadas) {
+    		 if(!t.seVioTodaLaTemporada()) {
+    				 seVio = false;
+    		 }
+    	 }
+    	 return seVio;
+     }
+     
+     
+     
+     public void agregarTemporada(Temporada t) {
+    	 //Agregar Temporada
+    	 temporadas.add(t);
+     }
+
+	@Override
+	public String toString() {
+		return "Serie [titulo=" + titulo + ", descripcion=" + descripcion + ", autor=" + autor + ", genero=" + genero
+				+ ", temporadas=" + temporadas + "]";
 	}
-	
-	public double promedioCalifTemp(){
-		double sumaEp = 0;
-		for(Temporada tt : temporadas) {
-			sumaEp += (tt.cantEpVistosTemp()*tt.promedioCalifEp());
-		}
-		return sumaEp/this.cantEpVistosSerie();
-	}
-	
-	public boolean seVieronTodosEp() {
-		int tempVista = 0;
-		for(Temporada tt : temporadas) {
-			if(tt.todosEpVistos())
-				tempVista++;
-		}
-		return tempVista==cantTemp;
-	}
-	
+     
+
+
+
 }

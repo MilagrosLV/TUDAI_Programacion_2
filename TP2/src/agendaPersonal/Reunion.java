@@ -2,24 +2,26 @@ package agendaPersonal;
 
 import java.time.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Reunion {
+	//ATRIBUTOS
 	private String lugar, tema;
-	private LocalTime duracion;
-	private LocalDateTime fechaHoraInicio, fechaHoraFin;
-	private ArrayList<Persona> participantes;
+	private List<Persona> participantes;
+	private int duracionHora;
+	private LocalDateTime fechaHorario, fechaHorarioFin;
 	
 	
-	public Reunion(String lugar, String tema, LocalTime duracion, LocalDateTime fechaHoraInicio) {
-		setLugar(lugar);
-		setTema(tema);
-		setDuracion(duracion);
-		setFechaHoraInicio(fechaHoraInicio);
-		this.fechaHoraFin = crearFechaHoraFin(duracion, fechaHoraInicio);
-		this.participantes = new ArrayList<>();
+	//CONSTRUCTORES
+	public Reunion(String lugar, String tema, int DuracionHora, LocalDateTime fechaHorario) {
+		this.lugar = lugar;
+		this.tema = tema;
+		this.participantes = new ArrayList<Persona>();
+		this.duracionHora = DuracionHora;
+		this.setFechaHora(fechaHorario);
 	}
-
-	//GETTERS AND SETTERS METHODS
+	
+	//GETTERS y SETTERS
 	public String getLugar() {
 		return lugar;
 	}
@@ -32,47 +34,37 @@ public class Reunion {
 	public void setTema(String tema) {
 		this.tema = tema;
 	}
-	public LocalTime getDuracion() {
-		return duracion;
+	public int getDuracionHora() {
+		return duracionHora;
 	}
-	public void setDuracion(LocalTime duracion) {
-		this.duracion = duracion;
+	public void setDuracionHora(int duracionHora) {
+		this.duracionHora = duracionHora;
 	}
-	public LocalDateTime getFechaHoraInicio() {
-		return fechaHoraInicio;
+	public LocalDateTime getFechaHora() {
+		return fechaHorario;
 	}
-	public void setFechaHoraInicio(LocalDateTime fechaHoraInicio) {
-		this.fechaHoraInicio = fechaHoraInicio;
+	public void setFechaHora(LocalDateTime fechaHorario) {
+		this.fechaHorario = fechaHorario;
+		fechaHorarioFin = fechaHorario.plusHours(duracionHora);
 	}
 	public LocalDateTime getFechaHoraFin() {
-		return fechaHoraFin;
+		return fechaHorarioFin;
 	}
 
-	
-	//OTHER METHODS
-	public LocalDateTime crearFechaHoraFin(LocalTime duracion, LocalDateTime fechaHoraInicio) {
-		return fechaHoraInicio.plusHours(duracion.getHour()).plusMinutes(duracion.getMinute());
-	}
-	public void agregarPersona(Persona p) {
-		int cantPersonaRepetida = 0;
-		for(Persona pp : participantes) {
-			if(p.equals(pp)) {
-				cantPersonaRepetida++;
-			}
-		}
-		if(cantPersonaRepetida > 0) {
-			System.out.println(p.getNombre() + " ya se anotó. ");
-		} else {
-			participantes.add(p);
-		}
-	}
 
+	//OTROS METODOS
 	@Override
 	public String toString() {
-		return "Reunion [lugar=" + lugar + ", tema=" + tema + ", duracion=" + duracion + ", fechaHoraInicio="
-				+ fechaHoraInicio + ", fechaHoraFin=" + fechaHoraFin + ", participantes=" + participantes + "]";
+		return "Reunion [lugar=" + lugar + ", tema=" + tema + ", participantes=" + participantes + ", duracionMinutos="
+				+ duracionHora + "]";
 	}
-
+	
+	//Agregar participantes a la reunion
+	public void agregarParticipante(Persona p) {
+		participantes.add(p);
+	}
+	
+	
 	
 	
 	

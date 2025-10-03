@@ -1,56 +1,76 @@
 package series;
 
 public class Episodio {
-	//ATTRIBUTES
-	private String titulo, descripcion;
-	private boolean visto;
-	private int calificacion;
-	private final int MAX_CALIF=5, MIN_CALIF=0;
 	
-	//CONSTRUCTOR
-	public Episodio(String titulo, String descripcion, boolean visto, int calificacion) {
-		this.titulo = titulo;
-		this.descripcion = descripcion;
-		this.visto = visto;
-		this.calificacion = calificacion;
-	}
+	private final int MAX_CALIF = 5, MIN_CALIF = 1; 
+    private String titulo;
+    private String descripcion;
+    private boolean visto;
+    private int calificacion = 0;;
+    
+    //CONSTRUCTORES
+    public Episodio(String titulo, String descripcion, boolean visto){
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.setVisto(visto);
+    }
+    public Episodio(String titulo, String descripcion, boolean visto, int calificacion){
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.setVisto(visto);
+        this.setCalificacion(calificacion);
+    }
 
-	//GETTERS AND SETTERS
-	public String getTitulo() {
-		return titulo;
-	}
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
+    //GETTERS y SETTERS
+    public String getTitulo() {
+        return titulo;
+    }
 
-	public String getDescripcion() {
-		return descripcion;
-	}
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
-	public boolean isVisto() {
-		return visto;
-	}
-	public void setVisto(boolean visto) {
-		this.visto = visto;
-	}
+    public String getDescripcion() {
+        return descripcion;
+    }
 
-	public int getCalificacion() {
-		return calificacion;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public boolean isVisto() {
+        return visto;
+    }
+
+    public void setVisto(boolean visto) {
+    	if(!visto) {
+    		this.setCalificacion(-1);
+    	} 
+        this.visto = visto;
+    }
+
+    public int getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(int calificacion) {
+        //Chequear rango
+    	if(!visto) {
+    		this.calificacion = -1;
+    	} else {
+        	if((MIN_CALIF <= calificacion) && (calificacion <= MAX_CALIF)) {
+                this.calificacion = calificacion;
+        	} else {
+        		System.out.println("Calificación:" + calificacion + ", está fuera del rango. Vuelva a intentarlo.");
+        	}
+    	}
+    }
+
+	@Override
+	public String toString() {
+		return "Episodio [titulo=" + titulo + ", descripcion=" + descripcion + ", visto=" + visto + ", calificacion="
+				+ calificacion + "]";
 	}
-	public void setCalificacion(int calificacion) {
-		if(isVisto()) {
-			if(calificacion<=MAX_CALIF && MIN_CALIF<=calificacion)
-				this.calificacion = calificacion;
-			else
-				System.out.println("Calificación fuera del rango");
-		} else {
-			this.calificacion = -1;
-		}
-	}
-	
-	//OTHER METHODS
-	
+    
+    
 }
