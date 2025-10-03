@@ -7,10 +7,10 @@ public class Planta {
     private String nombreCientifico, clasificacionSuperior, familia, clase;
     private ArrayList<String> nombresVulgares;
     private int sol, agua;
-    private boolean prosperaInterior, riegoEscaso;
+    private boolean prosperaInterior;
 
     //CONSTRUCTOR
-    public Planta(String nombreCientifico, String clasificacionSuperior, String familia, String clase, ArrayList<String> nombresVulgares, int sol, int agua) {
+    public Planta(String nombreCientifico, String clasificacionSuperior, String familia, String clase, ArrayList<String> nombresVulgares, int sol, int agua, boolean prosperaInterior) {
         this.nombreCientifico = nombreCientifico;
         this.clasificacionSuperior = clasificacionSuperior;
         this.familia = familia;
@@ -18,6 +18,7 @@ public class Planta {
         this.nombresVulgares = new ArrayList<String>(nombresVulgares);
         this.sol = controlEscala(sol);
         this.agua = controlEscala(agua);
+        this.prosperaInterior = prosperaInterior;
     }
 
     //GETTERS
@@ -46,9 +47,6 @@ public class Planta {
     public boolean isProsperaInterior() {
         return prosperaInterior;
     }
-    public boolean isRiegoEscaso() {
-        return riegoEscaso;
-    }
 
     //OTHER METHODS
     public int controlEscala(int nro) {
@@ -59,6 +57,6 @@ public class Planta {
         }
         return nro;
     }
-    
+
 
 }
