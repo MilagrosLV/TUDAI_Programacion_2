@@ -1,5 +1,8 @@
 package streaming;
 
+import vivero.filtros.FiltroEsInterior;
+import vivero.filtros.FiltroRiegoInferior;
+
 public class FiltroAnd extends Filtro {
 	private Filtro f1;
 	private Filtro f2;
@@ -9,7 +12,11 @@ public class FiltroAnd extends Filtro {
 	  this.f2 = f2;
 	}
 	  
-	public boolean eval(Pelicula p){
+	public FiltroAnd(FiltroEsInterior f8, FiltroRiegoInferior f5) {
+        //TODO Auto-generated constructor stub
+    }
+
+    public boolean eval(Pelicula p){
 	  return f1.eval(p) && f2.eval(p);
 	}
 }

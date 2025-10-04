@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import vivero.Planta;
 
-public class FiltroNombreVulgarIgual {
+public class FiltroNombreVulgarIgual extends Filtro{
     //ATRIBUTES
     private String nombreConsultado;
     private ArrayList<String> nombresVulgares;

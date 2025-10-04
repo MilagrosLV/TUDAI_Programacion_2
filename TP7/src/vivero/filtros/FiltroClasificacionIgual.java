@@ -2,7 +2,7 @@ package vivero.filtros;
 
 import vivero.Planta;
 
-public class FiltroClasificacionIgual {
+public class FiltroClasificacionIgual extends Filtro{
     //ATRIBUTES
     private String nombreConsultado;
 

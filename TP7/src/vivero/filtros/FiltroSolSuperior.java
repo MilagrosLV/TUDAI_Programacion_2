@@ -2,7 +2,7 @@ package vivero.filtros;
 
 import vivero.Planta;
 
-public class FiltroSolSuperior {
+public class FiltroSolSuperior extends Filtro{
     //ATRIBUTES
     private int nroConsultado;
 
