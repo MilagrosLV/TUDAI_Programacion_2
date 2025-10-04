@@ -2,7 +2,6 @@ package vivero;
 
 import java.util.ArrayList;
 
-import streaming.FiltroAnd;
 import vivero.filtros.FiltroClasificacionIgual;
 import vivero.filtros.FiltroEsInterior;
 import vivero.filtros.FiltroNombreCientificoIncluye;
@@ -11,6 +10,7 @@ import vivero.filtros.FiltroRiegoInferior;
 import vivero.filtros.FiltroRiegoSuperior;
 import vivero.filtros.FiltroSolInferior;
 import vivero.filtros.FiltroSolSuperior;
+import vivero.filtros.FiltroAnd;
 
 public class Main {
     private static ArrayList<String> ArraysList(String... items) {
