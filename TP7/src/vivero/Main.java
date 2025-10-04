@@ -26,7 +26,6 @@ public class Main {
         if(plantasFiltradas.isEmpty()) {
             return info + " - No se encontraron plantas que cumplan el criterio.";
         }
-        
         for (Planta p : plantasFiltradas) {
             info += " - " + p.getNombreCientifico();
         }
@@ -51,25 +50,25 @@ public class Main {
         Filtro f2 = new FiltroNombreVulgarIgual("Lavanda");
         Filtro f3 = new FiltroClasificacionIgual("Magnoliophyta");
         
-        //niveles de sol superior y riego inferior
+        //niveles de sol y riego 
         Filtro f4 = new FiltroSolSuperior(5);
         Filtro f5 = new FiltroRiegoInferior(3);
             //combinacion logica
-            Filtro f45 = new FiltroAnd(f4, f5);
+            Filtro f45 = new FiltroAnd(f4, f5);//sol superior a 5 y riego inferior a 3
 
-        //niveles de sol inferior y riego superior
         Filtro f6 = new FiltroSolInferior(4);
         Filtro f7 = new FiltroRiegoSuperior(4);
             //combinacion logica    
-            Filtro f67 = new FiltroAnd(f6, f7);
+            Filtro f67 = new FiltroAnd(f6, f7);//sol inferior a 4 y riego superior a 4
 
         //planta de interior
         Filtro f8 = new FiltroEsInterior();
 
         //combinacion logica
-        Filtro f85 = new FiltroAnd(f8, f5);
-        Filtro fg = new FiltroAnd(f11, f8);
-            Filtro fgg = new FiltroAnd(fg, f45); //Nombre Cientifico incluye "angustifolia", es de interior, Sol>5 y Riego<3
+        Filtro f85 = new FiltroAnd(f8, f5);// planta de interior y riego inferior a 3
+        //combinacion logica avanzada
+        Filtro fg = new FiltroAnd(f11, f8); //Nombre Cientifico incluye "angustifolia" y es de interior
+        Filtro fgg = new FiltroAnd(fg, f45); //Nombre Cientifico incluye "angustifolia", es de interior, Sol>5 y Riego<3
 
         //AGREGO PLANTAS AL VIVERO
         v.agregarPlanta(p5);v.agregarPlanta(p4); v.agregarPlanta(p3); v.agregarPlanta(p2); v.agregarPlanta(p1);
