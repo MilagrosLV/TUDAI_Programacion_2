@@ -2,6 +2,8 @@ package vivero;
 
 import java.util.ArrayList;
 
+import vivero.filtros.Filtro;
+
 public class Vivero {
     //ATRIBUTOS
     private ArrayList<Planta> plantas;
@@ -12,6 +14,10 @@ public class Vivero {
     }
 
     //OTHER METHODS
+    public void agregarPlanta(Planta p) {
+        this.plantas.add(p);
+    }
+    
     public ArrayList<Planta> plantasCriterio(Filtro f) {
 
         ArrayList<Planta> plantasFiltradas = new ArrayList<Planta>();
