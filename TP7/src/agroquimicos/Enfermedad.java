@@ -5,13 +5,13 @@ import java.util.List;
 
 public class Enfermedad {
 	//ATRIBUTOS
-	private String nombre;
-	private List<String> estadosPatologicos;
+	private final String nombre;
+	private final List<String> estadosPatologicos;
 	
 	//CONSTRUCTOR
 	public Enfermedad(String nombre){
 		this.nombre = nombre;
-		estadosPatologicos = new ArrayList <String>();
+		estadosPatologicos = new ArrayList <>();
 	}
 	
 	//MÉTODOS
@@ -20,7 +20,7 @@ public class Enfermedad {
 	}
 	
 	public List<String> getEstadosPatologicos (){
-		return (new ArrayList<String>(estadosPatologicos));
+		return (new ArrayList<>(estadosPatologicos));
 	}
 
 	public String getNombre() {

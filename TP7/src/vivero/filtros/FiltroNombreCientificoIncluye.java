@@ -4,15 +4,16 @@ import vivero.Planta;
 
 public class FiltroNombreCientificoIncluye extends Filtro{
     //ATRIBUTES
-    private String nombreConsulta;
+    private final String nombreConsulta;
 
     //CONTRUCTOR
     public FiltroNombreCientificoIncluye(String nombreConsulta) {
-        this.nombreConsulta = nombreConsulta;
+        this.nombreConsulta = nombreConsulta.toLowerCase();
     }
 
     //OTHER METHODS
+    @Override
     public boolean eval(Planta p){
-        return p.getNombreCientifico().contains(nombreConsulta);
+        return p.getNombreCientifico().toLowerCase().contains(nombreConsulta);
     }
 }

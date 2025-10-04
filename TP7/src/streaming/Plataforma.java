@@ -5,15 +5,15 @@ import java.util.ArrayList;
 
 public class Plataforma {
   
-  private List<Pelicula> peliculas;
+  private final List<Pelicula> peliculas;
   
   public Plataforma(){
-    peliculas = new ArrayList<Pelicula>();
+    peliculas = new ArrayList<>();
   }
   
   public List<Pelicula> peliculasCriterio(Filtro f){
     
-    List<Pelicula> pelis = new ArrayList<Pelicula>();
+    List<Pelicula> pelis = new ArrayList<>();
     
     for(Pelicula p: peliculas){
       if(f.eval(p)){

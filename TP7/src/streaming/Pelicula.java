@@ -4,11 +4,11 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Pelicula {
-	//ATRIBUTOS
-	private String titulo, sinopsis, director;
-	private List<String> generos; 
-	private List<String> actores;
-	private int anioEstreno, duracion, edadMinima;
+	//ATRIBUTOS;
+	private final String titulo, sinopsis, director;
+	private final List<String> generos; 
+	private final List<String> actores;
+	private final int anioEstreno, duracion, edadMinima;
 	
 	//CONSTRUCTOR
 	public Pelicula (String titulo, String sinopsis, String director, int anioEstreno, int duracion, int edadMinima) {
@@ -18,8 +18,8 @@ public class Pelicula {
 	    this.anioEstreno = anioEstreno;
 	    this.duracion = duracion;
 	    this.edadMinima = edadMinima;
-	    generos = new ArrayList<String>();
-	    actores = new ArrayList<String>();
+	    generos = new ArrayList<>();
+	    actores = new ArrayList<>();
 	}
 
 	public String getTitulo() {

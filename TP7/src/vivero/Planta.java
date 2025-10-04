@@ -3,11 +3,12 @@ package vivero;
 import java.util.ArrayList;
 
 public class Planta {
+
     //ATRIBUTOS
-    private String nombreCientifico, clasificacionSuperior, familia, clase;
-    private ArrayList<String> nombresVulgares;
-    private int sol, agua;
-    private boolean prosperaInterior;
+    private final String nombreCientifico, clasificacionSuperior, familia, clase;
+    private final ArrayList<String> nombresVulgares;
+    private final int sol, agua;
+    private final boolean prosperaInterior;
 
     //CONSTRUCTOR
     public Planta(String nombreCientifico, String clasificacionSuperior, String familia, String clase, ArrayList<String> nombresVulgares, int sol, int agua, boolean prosperaInterior) {
@@ -15,7 +16,7 @@ public class Planta {
         this.clasificacionSuperior = clasificacionSuperior;
         this.familia = familia;
         this.clase = clase;
-        this.nombresVulgares = new ArrayList<String>(nombresVulgares);
+        this.nombresVulgares = new ArrayList<>(nombresVulgares);
         this.sol = controlEscala(sol);
         this.agua = controlEscala(agua);
         this.prosperaInterior = prosperaInterior;
@@ -49,7 +50,7 @@ public class Planta {
     }
 
     //OTHER METHODS
-    public int controlEscala(int nro) {
+    private int controlEscala(int nro) {
         if (nro < 1) {
             nro = 1;
         } else if (nro > 10) {

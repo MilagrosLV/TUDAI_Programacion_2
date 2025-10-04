@@ -6,11 +6,11 @@ import vivero.filtros.Filtro;
 
 public class Vivero {
     //ATRIBUTOS
-    private ArrayList<Planta> plantas;
+    private final ArrayList<Planta> plantas;
 
     //CONSTRUCTOR
     public Vivero() {
-        this.plantas = new ArrayList<Planta>();
+        this.plantas = new ArrayList<>();
     }
 
     //OTHER METHODS
@@ -20,13 +20,24 @@ public class Vivero {
     
     public ArrayList<Planta> plantasCriterio(Filtro f) {
 
-        ArrayList<Planta> plantasFiltradas = new ArrayList<Planta>();
+        ArrayList<Planta> plantasFiltradas = new ArrayList<>();
 
-        for (Planta p : plantas) {
-            if (f.eval(p)) {
-                plantasFiltradas.add(p);
+        if(!plantas.isEmpty()){
+            for (Planta p : plantas) {
+                if (f.eval(p)) {
+                    plantasFiltradas.add(p);
+                }
             }
         }
         return plantasFiltradas;
+    }
+    
+    @Override
+    public String toString() {
+        String info = "Plantas en el vivero:\n";
+        for (Planta p : plantas) {
+            info += "- " + p.getNombreCientifico() + "\n";
+        }
+        return info;
     }
 }

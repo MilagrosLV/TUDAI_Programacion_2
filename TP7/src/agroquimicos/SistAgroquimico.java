@@ -4,10 +4,10 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class SistAgroquimico {
-	private List<Agroquimico> agroquimicos;
+	private final List<Agroquimico> agroquimicos;
 	  
 	public SistAgroquimico(){
-	  agroquimicos = new ArrayList<Agroquimico>();
+	  agroquimicos = new ArrayList<>();
 	}
 	  
 	public void agregarAgroquimico(Agroquimico a){
@@ -15,7 +15,7 @@ public class SistAgroquimico {
 	}
 	  
 	public List<Agroquimico> agroquimicosDadaEnfermedad(Enfermedad e){
-	  List<Agroquimico> agroquimicosEnf = new ArrayList<Agroquimico>();
+	  List<Agroquimico> agroquimicosEnf = new ArrayList<>();
 	  for(Agroquimico a: agroquimicos){
 	    if(a.trataEnfermedad(e)){
 	        agroquimicosEnf.add(a);
@@ -25,7 +25,7 @@ public class SistAgroquimico {
 	}
 	  
 	public List<Agroquimico> agroquimicosTratados(Enfermedad e, Cultivo c){
-	  List<Agroquimico> agroquimicosTrat = new ArrayList<Agroquimico>();
+	  List<Agroquimico> agroquimicosTrat = new ArrayList<>();
 	  for(Agroquimico a: agroquimicos){
 	    if(a.trataEnfermedad(e) && !a.usoDesaconsejado(c)){
 	      agroquimicosTrat.add(a);

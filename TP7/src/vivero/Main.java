@@ -2,6 +2,7 @@ package vivero;
 
 import java.util.ArrayList;
 
+import vivero.filtros.Filtro;
 import vivero.filtros.FiltroClasificacionIgual;
 import vivero.filtros.FiltroEsInterior;
 import vivero.filtros.FiltroNombreCientificoIncluye;
@@ -31,20 +32,28 @@ public class Main {
         Planta p4 = new Planta("Aloe vera", "Magnoliophyta", "Asphodelaceae", "Liliopsida", new ArrayList<String>(ArraysList("Sábila")), 9, 2, true);
         Planta p5 = new Planta("Cactus", "Magnoliophyta", "Cactaceae", "Magnoliopsida", new ArrayList<String>(ArraysList("Cactus")), 10, 1, false);
         
-        FiltroNombreCientificoIncluye f1 = new FiltroNombreCientificoIncluye("Rosa");
-        FiltroNombreVulgarIgual f2 = new FiltroNombreVulgarIgual("Lavanda");
-        FiltroClasificacionIgual f3 = new FiltroClasificacionIgual("Magnoliophyta");
-        FiltroSolSuperior f4 = new FiltroSolSuperior(5);
-        FiltroRiegoInferior f5 = new FiltroRiegoInferior(3);
-        FiltroSolInferior f6 = new FiltroSolInferior(4);
-        FiltroRiegoSuperior f7 = new FiltroRiegoSuperior(4);
-        FiltroEsInterior f8 = new FiltroEsInterior();
-        FiltroAnd f9 = new FiltroAnd(f8, f5);
+        Filtro f1 = new FiltroNombreCientificoIncluye("Rosa");
+        Filtro f2 = new FiltroNombreVulgarIgual("Lavanda");
+        Filtro f3 = new FiltroClasificacionIgual("Magnoliophyta");
+        Filtro f4 = new FiltroSolSuperior(5);
+        Filtro f5 = new FiltroRiegoInferior(3);
+        Filtro f6 = new FiltroSolInferior(4);
+        Filtro f7 = new FiltroRiegoSuperior(4);
+        Filtro f8 = new FiltroEsInterior();
+        Filtro f9 = new FiltroAnd(f8, f5);
 
+        //AGREGO PLANTAS AL VIVERO
         v.agregarPlanta(p5);v.agregarPlanta(p4); v.agregarPlanta(p3); v.agregarPlanta(p2); v.agregarPlanta(p1);
 
         //PRUEBAS
-        System.out.println();
+        System.out.println("a) Plantas cuyo nombre científico incluya la palabra “Ficus”: ");
+        System.out.println("b) Plantas a las que se conozca vulgarmente como “Lavanda”: ");
+        System.out.println("c) Plantas cuya clasificación sea “Crassula”: ");
+        System.out.println("d) Plantas que requieran un nivel de sol superior a 5 y riego inferior a 3: ");
+        System.out.println("e) Plantas que requieran un nivel de sol inferior a 4 y riego superior a 4: ");
+        System.out.println("f) Plantas de interior que necesiten poco riego (inferior a 3): ");
+        System.out.println("g) Cualquier combinación lógica de las formas anteriores: ");
+
     }
 
 

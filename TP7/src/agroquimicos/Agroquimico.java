@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class Agroquimico {
 	//ATRIBUTOS
-	private String nombre;
-	private List<Cultivo> cultivosDesanconsejados;
-	private List<String> estadosPatologicos;
+	private final String nombre;
+	private final List<Cultivo> cultivosDesanconsejados;
+	private final List<String> estadosPatologicos;
 	
 	//CONSTRUCTOR
 	public Agroquimico(String nombre){
 		this.nombre = nombre;
-		cultivosDesanconsejados = new ArrayList <Cultivo>();
-		estadosPatologicos = new ArrayList <String>();
+		cultivosDesanconsejados = new ArrayList <>();
+		estadosPatologicos = new ArrayList <>();
 	}
 	
 	//MÉTODOS

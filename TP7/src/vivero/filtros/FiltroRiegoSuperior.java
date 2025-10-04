@@ -4,7 +4,7 @@ import vivero.Planta;
 
 public class FiltroRiegoSuperior extends Filtro{
     //ATRIBUTES
-    private int nroConsultado;
+    private final int nroConsultado;
 
     //CONSTRUCTOR
     public FiltroRiegoSuperior (int nroConsultado){
@@ -12,6 +12,7 @@ public class FiltroRiegoSuperior extends Filtro{
     }
 
     //OTHER METHODS
+    @Override
     public boolean eval(Planta p){
         return p.getAgua() > this.nroConsultado;
     }

@@ -5,13 +5,13 @@ import java.util.List;
 
 public class Cultivo {
 	//ATRIBUTOS
-	private String nombre;
-	private List<Enfermedad> enfermedades;
+	private final String nombre;
+	private final List<Enfermedad> enfermedades;
 	
 	//CONSTRUCTOR
 	public Cultivo(String nombre){
 		this.nombre = nombre;
-		enfermedades = new ArrayList <Enfermedad>();
+		enfermedades = new ArrayList <>();
 	}
 	
 	//MÉTODOS
@@ -32,12 +32,12 @@ public class Cultivo {
 		return false;
 	}
 		  
-		  @Override
-		  public boolean equals(Object o){
-		    if(o == null){
-		      return false;
-		    }
-		    Cultivo c = (Cultivo) o;
-		    return this.nombre.equals(c.getNombre());  
-		  }
+	@Override
+	public boolean equals(Object o){
+		if(o == null){
+		    return false;
+		}
+		Cultivo c = (Cultivo) o;
+		return this.nombre.equals(c.getNombre());  
+	}
 }

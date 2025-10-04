@@ -8,6 +8,7 @@ public class FiltroEsInterior extends Filtro{
     }
     
     //OTHER METHODS
+    @Override
     public boolean eval(Planta p){
         return p.isProsperaInterior();
     }

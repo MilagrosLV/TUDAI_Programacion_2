@@ -4,8 +4,8 @@ import vivero.Planta;
 
 public class FiltroAnd extends Filtro{
     //ATRIBUTOS
-    private Filtro f1;
-    private Filtro f2;
+    private final Filtro f1;
+    private final Filtro f2;
 
     //CONSTRUCTOR
     public FiltroAnd(Filtro f1, Filtro f2){
@@ -14,6 +14,7 @@ public class FiltroAnd extends Filtro{
     }
 
     //OTHER METHODS
+    @Override
     public boolean eval(Planta p){
         return f1.eval(p) && f2.eval(p);
     }
