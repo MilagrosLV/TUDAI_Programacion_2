@@ -1,6 +1,8 @@
-package vivero;
+package vivero.filtros;
 
 import java.util.ArrayList;
+
+import vivero.Planta;
 
 public class FiltroNombreVulgarIgual {
     //ATRIBUTES

@@ -1,4 +1,6 @@
-package vivero;
+package vivero.filtros;
+
+import vivero.Planta;
 
 public class FiltroSolSuperior {
     //ATRIBUTES
