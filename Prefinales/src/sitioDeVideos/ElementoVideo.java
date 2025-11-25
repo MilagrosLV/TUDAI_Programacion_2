@@ -21,4 +21,6 @@ public abstract class ElementoVideo {
 	
 	//Busqueda de listas
 	public abstract ArrayList<Video> buscar (Filtro ff);
+	@Override
+    public abstract String toString();
 }

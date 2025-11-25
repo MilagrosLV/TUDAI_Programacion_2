@@ -15,15 +15,9 @@ public class Playlist extends ElementoVideo {
 		super();
 		this.setTitulo(titulo);
 		this.demora = demora;
-		this.elementos = new ArrayList<ElementoVideo>();
+		this.elementos = new ArrayList<>();
 	}
 	//Metodos GETTERS y SETTERS
-	public String getTitulo() {
-		return titulo;
-	}
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
 	
 	public int getDemora() {
 		return demora;
@@ -84,4 +78,11 @@ public class Playlist extends ElementoVideo {
 		}
 		return suma +  this.getDemora();
 	}
+
+    @Override
+    public String toString() {
+        return ("Playlist: " + this.getTitulo() + ", Duración total (segundos): " + this.getDuracionSeg() + ", Cantidad de videos: " + this.contarVideos() + "\n");
+    }
+
+	
 }
