@@ -18,6 +18,7 @@ class Persona {
         return direccion;
     }
     public String getCiudad() {
-        return ciudad;
+    	String lower_case_city = this.ciudad.toLowerCase();
+        return lower_case_city;
     }
 }

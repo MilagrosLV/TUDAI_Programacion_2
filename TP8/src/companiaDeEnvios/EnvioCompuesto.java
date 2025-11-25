@@ -7,16 +7,19 @@ public class EnvioCompuesto extends Envio {
 	private ArrayList<Envio> combo;
 	
 	//Constructor
-	public EnvioCompuesto(String codigoDeSeguimiento) {
-		super(codigoDeSeguimiento);
+	public EnvioCompuesto(String codigoDeSeguimiento, Persona remitente, Persona destinatario) {
+		super(codigoDeSeguimiento, remitente, destinatario);
 		this.combo = new ArrayList<>();
 	}
 	
 
 	@Override
 	public double getPeso() {
-		
-		return ;
+		double suma = 0;
+		for(Envio ee : combo) {
+			suma += ee.getPeso();
+		}
+		return suma;
 	}
 
 	@Override
@@ -25,7 +28,9 @@ public class EnvioCompuesto extends Envio {
 	}
 	
 	public void agregarEnvio (Envio e) {
-		
+		if (e.getDestinatario().getCiudad().equals(this.getDestinatario().getCiudad())) {
+			combo.add(e);
+		}
 	}
 
 }
