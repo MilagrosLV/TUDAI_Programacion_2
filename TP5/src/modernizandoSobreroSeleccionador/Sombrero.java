@@ -51,6 +51,11 @@ public class Sombrero {
 			for(Casa cc : casas) {
 				if(!casasVetadas.contains(cc) && a.getCasa() == null) {//Si esta casa no es vetada y el alumno no tiene casa aún
 					cc.asignar(a);
+					for(Casa ccc : casas) {
+						for (Alumno aa : ccc.getAlumnos()) {
+							a.actualizarFamiliares(aa);
+						}
+					}
 				}
 			}
 		} else {

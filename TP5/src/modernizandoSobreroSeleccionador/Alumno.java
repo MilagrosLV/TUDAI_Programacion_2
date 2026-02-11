@@ -42,6 +42,12 @@ public class Alumno {
 	}
 	public ArrayList<Alumno> getFamiliares() {
 		return new ArrayList<Alumno>(familiares);
+		
+	}
+	public void actualizarFamiliares(Alumno a) {
+		if(this.getFamiliares().contains(a)) {
+			a.agregarFamiliar(this);
+		}
 	}
 	public Casa getCasa() {
 		Casa copiaC = c;
@@ -63,6 +69,7 @@ public class Alumno {
 			cualidades.add(c);
 		}
 	}
+
 	public void agregarFamiliar(Alumno f) {
 		boolean repetido=false;
 		if(familiares != null) {

@@ -62,6 +62,7 @@ public abstract class Casa {
 	public void asignar(Alumno a) {
 		if(cumpleCondiciones(a)) {
 			this.agregarAlumno(a);
+			
 			System.out.println(this.getNombre()+"!!!");
 		}
 	}
