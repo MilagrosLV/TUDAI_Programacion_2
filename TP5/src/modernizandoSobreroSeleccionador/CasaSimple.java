@@ -6,7 +6,9 @@ public class CasaSimple extends Casa {
 
 	public CasaSimple(String nombre, int cant_max_alumnos, ArrayList<Cualidad> cualidades, ArrayList<Alumno> alumnos) {
 		super(nombre, cant_max_alumnos, cualidades, alumnos);
-
+	}
+	public CasaSimple(String nombre, int cant_max_alumnos, ArrayList<Cualidad> cualidades) {
+		super(nombre, cant_max_alumnos, cualidades);
 	}
 
 	@Override

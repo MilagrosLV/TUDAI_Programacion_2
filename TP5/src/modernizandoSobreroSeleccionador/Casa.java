@@ -17,6 +17,12 @@ public abstract class Casa {
 		this.cualidades = cualidades;
 		this.alumnos = alumnos;
 	}
+	public Casa(String nombre, int cant_max_alumnos, ArrayList<Cualidad> cualidades) {
+		this.nombre = nombre;
+		setCant_max_alumnos(cant_max_alumnos);
+		this.cualidades = cualidades;
+		this.alumnos = new ArrayList<>();
+	}
 	//MÉTODOS getters Y setters
 	public String getNombre() {
 		return this.nombre;

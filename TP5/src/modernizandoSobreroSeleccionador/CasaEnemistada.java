@@ -11,6 +11,10 @@ public class CasaEnemistada extends Casa {
 		super(nombre, cant_max_alumnos, cualidades, alumnos);
 		this.casaEnemiga = casaEnemiga;
 	}
+	public CasaEnemistada(String nombre, int cant_max_alumnos, ArrayList<Cualidad> cualidades, Casa casaEnemiga) {
+		super(nombre, cant_max_alumnos, cualidades);
+		this.casaEnemiga = casaEnemiga;
+	}
 
 	//GETTERS Y SETTERS
 	public Casa getCasaEnemiga() {

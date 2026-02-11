@@ -58,6 +58,9 @@ public class Sombrero {
 					}
 				}
 			}
+			if (a.getCasa() == null) {
+				System.out.println("No se pudo asignar una casa a "+a.getNombre());
+			}
 		} else {
 			System.out.println(a.getNombre()+" ya pertenece a "+a.getCasa().getNombre());
 		}
