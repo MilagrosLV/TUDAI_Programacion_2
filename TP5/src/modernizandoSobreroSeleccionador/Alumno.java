@@ -16,10 +16,19 @@ public class Alumno {
 		this.familiares = familiares;
 		this.c = c;
 	}
+	public Alumno(String nombre, ArrayList<Cualidad> cualidades, Casa c) {
+		setNombre(nombre);
+		this.cualidades = cualidades;
+		this.c = c;
+	}
 	public Alumno(String nombre, ArrayList<Cualidad> cualidades, ArrayList<Alumno> familiares) {
 		setNombre(nombre);
 		this.cualidades = cualidades;
 		this.familiares = familiares;
+	}
+	public Alumno(String nombre, ArrayList<Cualidad> cualidades) {
+		setNombre(nombre);
+		this.cualidades = cualidades;
 	}
 	//MÉTODOS GETTERS Y SETTERS
 	public String getNombre() {
