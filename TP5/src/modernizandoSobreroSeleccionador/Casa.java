@@ -56,22 +56,12 @@ public abstract class Casa {
 	}
 	
 	public boolean cumpleCualidades(Alumno a) {
-		int cant_cualidades_casa = this.getCualidades().size();//Cuento la cantidad de cualidades de la casa
-		int cant = 0; //Contador
-		
-		for (Cualidad casaC : this.getCualidades()) {
-			for (Cualidad alC : a.getCualidades()) {
-				if(alC.equals(casaC)) {
-					cant++;
-				}
-			}
-		}
-		return (cant_cualidades_casa == cant);
+		return (a.getCualidades().containsAll(this.cualidades));
 	}
 	
 	public void asignar(Alumno a) {
 		if(cumpleCondiciones(a)) {
-			agregarAlumno(a);
+			this.agregarAlumno(a);
 			System.out.println(this.getNombre()+"!!!");
 		}
 	}

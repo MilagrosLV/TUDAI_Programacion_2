@@ -19,13 +19,10 @@ public class CasaEnemistada extends Casa {
 	}
 	
 	//OTROS MÉTODOS
+
 	@Override
 	public boolean cumpleCondiciones(Alumno a) {
-		if(casaEnemiga.cumpleCondiciones(a)) {
-			//Hago que la casa enemiga est{e llena y después corrigo a su cant anterior al cambio.
-			int cant_max_aux = casaEnemiga.getCant_max_alumnos();
-			casaEnemiga.setCant_max_alumnos(casaEnemiga.getAlumnos().size());
-		}
+		// TODO Auto-generated method stub
 		return (this.cumpleCualidades(a) && !this.isLlena());
 	}
 	

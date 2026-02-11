@@ -10,17 +10,6 @@ public class Alumno {
 	private Casa c;
 	
 	//CONSTRUCTORES
-	/*public Alumno(String nombre, Casa c) {
-		setNombre(nombre);
-		this.cualidades = new ArrayList<>();
-		this.familiares = new ArrayList<>();
-		this.c = c;
-	}
-	public Alumno(String nombre) {
-		setNombre(nombre);
-		this.cualidades = new ArrayList<>();
-		this.familiares = new ArrayList<>();
-	}*/
 	public Alumno(String nombre, ArrayList<Cualidad> cualidades, ArrayList<Alumno> familiares, Casa c) {
 		setNombre(nombre);
 		this.cualidades = cualidades;
