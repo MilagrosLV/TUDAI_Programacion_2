@@ -22,7 +22,7 @@ public class Main {
 		Alumno a4 = new Alumno("Diego", new ArrayList<>(List.of(c2,c3,c6,c8,c10,c14)));
 		//ALUMNES con familiares, sin casa
 		Alumno a5 = new Alumno("Elena", new ArrayList<>(List.of(c1,c3,c4,c6,c9,c12)), new ArrayList<>(List.of(a4)));
-		Alumno a6 = new Alumno("Federico", new ArrayList<>(List.of(c2,c5,c7,c8,c11,c13)), new ArrayList<>(List.of(a4)));
+		Alumno a6 = new Alumno("Federico", new ArrayList<>(List.of(c2,c5,c7,c8,c11,c13)), new ArrayList<>(List.of(a4, a5)));
 		Alumno a7 = new Alumno("Gabriela", new ArrayList<>(List.of(c1,c2,c5,c7,c10,c14)), new ArrayList<>(List.of(a3)));
 		Alumno a8 = new Alumno("Hugo", new ArrayList<>(List.of(c3,c4,c6,c8,c9,c12)), new ArrayList<>(List.of(a4, a5, a6)));
 		//ALUMNES con casa, sin familiares
