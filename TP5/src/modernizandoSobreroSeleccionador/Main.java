@@ -55,7 +55,7 @@ public class Main {
 		sombrero.sortear(a13);sombrero.sortear(a14);sombrero.sortear(a15);sombrero.sortear(a16);
 
 
-		//System.out.println(a3);
+		System.out.println(a3.getNombre()+" ");
 
 
 	}

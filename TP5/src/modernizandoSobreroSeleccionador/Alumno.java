@@ -30,8 +30,7 @@ public class Alumno {
 		
 	}
 	public Casa getCasa() {
-		Casa copiaC = c;
-		return copiaC;
+		return c;
 	}
 	
 	//OTROS MÉTODOS 
@@ -78,10 +77,7 @@ public class Alumno {
 		// TODO Auto-generated method stub
 		this.c = casa;
 	}
-	@Override
-	public String toString() {
-		return "Alumno [nombre=" + nombre + ", cualidades=" + cualidades + ", familiares=" + familiares + ", c=" + c
-				+ "]";
+
 	}
 	
 	
