@@ -10,25 +10,10 @@ public class Alumno {
 	private Casa c;
 	
 	//CONSTRUCTORES
-	public Alumno(String nombre, ArrayList<Cualidad> cualidades, ArrayList<Alumno> familiares, Casa c) {
-		setNombre(nombre);
-		this.cualidades = cualidades;
-		this.familiares = familiares;
-		this.c = c;
-	}
-	public Alumno(String nombre, ArrayList<Cualidad> cualidades, Casa c) {
-		setNombre(nombre);
-		this.cualidades = cualidades;
-		this.c = c;
-	}
-	public Alumno(String nombre, ArrayList<Cualidad> cualidades, ArrayList<Alumno> familiares) {
-		setNombre(nombre);
-		this.cualidades = cualidades;
-		this.familiares = familiares;
-	}
 	public Alumno(String nombre, ArrayList<Cualidad> cualidades) {
 		setNombre(nombre);
 		this.cualidades = cualidades;
+		this.familiares = new ArrayList<>();
 	}
 	//MÉTODOS GETTERS Y SETTERS
 	public String getNombre() {
@@ -43,11 +28,6 @@ public class Alumno {
 	public ArrayList<Alumno> getFamiliares() {
 		return new ArrayList<Alumno>(familiares);
 		
-	}
-	public void actualizarFamiliares(Alumno a) {
-		if(this.getFamiliares().contains(a)) {
-			a.agregarFamiliar(this);
-		}
 	}
 	public Casa getCasa() {
 		Casa copiaC = c;
@@ -81,15 +61,29 @@ public class Alumno {
 			}
 		}
 		if (!repetido) {
-			familiares.add(f);
+			this.familiares.add(f);
+			for(Alumno ff : f.getFamiliares()) {
+				if(ff.equals(this)) {
+					repetido = true;
+					System.out.println("Este familiar se repite");
+				}
+			}
+			if(!repetido) {
+				f.familiares.add(this);
+			}
 		}
 	}
 	
+	public void agregarCasa(Casa casa) {
+		// TODO Auto-generated method stub
+		this.c = casa;
+	}
 	@Override
 	public String toString() {
 		return "Alumno [nombre=" + nombre + ", cualidades=" + cualidades + ", familiares=" + familiares + ", c=" + c
 				+ "]";
 	}
+	
 	
 	
 	

@@ -11,12 +11,6 @@ public abstract class Casa {
 	
 	
 	//CONSTRUCTOR
-	public Casa(String nombre, int cant_max_alumnos, ArrayList<Cualidad> cualidades, ArrayList<Alumno> alumnos) {
-		this.nombre = nombre;
-		setCant_max_alumnos(cant_max_alumnos);
-		this.cualidades = cualidades;
-		this.alumnos = alumnos;
-	}
 	public Casa(String nombre, int cant_max_alumnos, ArrayList<Cualidad> cualidades) {
 		this.nombre = nombre;
 		setCant_max_alumnos(cant_max_alumnos);
@@ -58,6 +52,7 @@ public abstract class Casa {
 		}
 		if (!repetido) {
 			this.alumnos.add(a);
+			a.agregarCasa(this);
 		}
 	}
 	
@@ -68,8 +63,9 @@ public abstract class Casa {
 	public void asignar(Alumno a) {
 		if(cumpleCondiciones(a)) {
 			this.agregarAlumno(a);
+			a.agregarCasa(this);
 			
-			System.out.println(this.getNombre()+"!!!");
+			System.out.println(a.getNombre()+" "+this.getNombre()+"!!!");
 		}
 	}
 	public abstract boolean cumpleCondiciones(Alumno a);

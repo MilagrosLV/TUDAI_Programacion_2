@@ -4,9 +4,6 @@ import java.util.ArrayList;
 
 public class CasaPuraSangre extends Casa {
 
-	public CasaPuraSangre(String nombre, int cant_max_alumnos, ArrayList<Cualidad> cualidades, ArrayList<Alumno> alumnos) {
-		super(nombre, cant_max_alumnos, cualidades, alumnos);
-	}
 	public CasaPuraSangre(String nombre, int cant_max_alumnos, ArrayList<Cualidad> cualidades) {
 		super(nombre, cant_max_alumnos, cualidades);
 	}

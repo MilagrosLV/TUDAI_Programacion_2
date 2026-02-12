@@ -7,10 +7,6 @@ public class CasaEnemistada extends Casa {
 	private Casa casaEnemiga;
 
 	//CONSTRUCTOR
-	public CasaEnemistada(String nombre, int cant_max_alumnos, ArrayList<Cualidad> cualidades, ArrayList<Alumno> alumnos, Casa casaEnemiga) {
-		super(nombre, cant_max_alumnos, cualidades, alumnos);
-		this.casaEnemiga = casaEnemiga;
-	}
 	public CasaEnemistada(String nombre, int cant_max_alumnos, ArrayList<Cualidad> cualidades, Casa casaEnemiga) {
 		super(nombre, cant_max_alumnos, cualidades);
 		this.casaEnemiga = casaEnemiga;
