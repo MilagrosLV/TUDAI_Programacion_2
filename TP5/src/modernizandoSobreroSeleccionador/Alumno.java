@@ -74,11 +74,10 @@ public class Alumno {
 	}
 	
 	public void agregarCasa(Casa casa) {
-		// TODO Auto-generated method stub
 		this.c = casa;
 	}
 
-	}
+	
 	
 	
 	
