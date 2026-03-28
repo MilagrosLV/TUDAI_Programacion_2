@@ -16,7 +16,6 @@ public class Main {
 		//e3
 		System.out.println(e3.getNombre() + ": " + e3.esBajoConsumo() + ", " + e3.balanceCostoPeso() + ", " + e3.esAltaGama());
 		
-		
 	}
 
 }
