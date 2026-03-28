@@ -7,17 +7,16 @@ public class Turno {
 	private Usuario u;
 	private Cancha c;
 	private LocalDateTime fechaHoraI, fechaHoraF;
-	private double precio;
 	private final double DESCUENTO=0.9, DURACION=1;
 	
 	
-	public Turno(Usuario u, Cancha c, LocalDateTime fechaHoraI, double precio) {
+	public Turno(Usuario u, Cancha c, LocalDateTime fechaHoraI) {
 		this.u = u;
 		this.c = c;
 		this.fechaHoraI = fechaHoraI;
 		setFechaHoraF(fechaHoraI);
-		this.precio = precio;
 	}
+	
 	
 	//GETTERS Y SETTERS
 	public LocalDateTime getFechaHoraF() {
@@ -36,13 +35,13 @@ public class Turno {
 		return fechaHoraI;
 	}
 	public double getPrecio() {
-		return precio;
+		if(u.isSocio()) {
+			return c.getPrecio()*this.getDESCUENTO();
+		}
+		return c.getPrecio();
 	}
 	public double getDESCUENTO() {
 		return DESCUENTO;
-	}
-	public String getNombre() {
-		return u.getNombre();
 	}
 	
 	//OTROS MÉTODOS

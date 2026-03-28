@@ -14,6 +14,7 @@ public class Usuario {
 		this.turnos = new ArrayList<>();
 	}
 	
+	//Métodos
 	public boolean isSocio() {
 		LocalDateTime ahora = LocalDateTime.now();
 		int contador = 0;
@@ -29,6 +30,8 @@ public class Usuario {
 		this.turnos.add(t);
 	}
 
+	
+	//Getter
 	public String getNombre() {
 		return nombre;
 	}
