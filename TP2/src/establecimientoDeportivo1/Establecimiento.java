@@ -44,32 +44,29 @@ public class Establecimiento {
 	}
 	public void addTurno(Turno u) {
 		if(!getAgenda().contains(u)) {
-			if(!isConflict(u)) {
+			if(!canchasOcupadas(u)) {
 				getAgenda().add(u);
-			}
+			}else {
+	            System.out.println("No hay canchas disponibles para ese horario.");
+	        }
 		} else {
 			System.out.println(u+" ya existe en la lista");
 		}
 	}
 	
-	private int contarCanchasOcupadas(Turno t) {
+	private boolean canchasOcupadas(Turno t) {//Chequeo la cantidad de canchas
 		int contador = 0;
 		for(Turno tt : turnos) {
-			if(t.getC().equals(tt.getC())) {
-				
+			if(t.getC().equals(tt.getC()) && overlap(t, tt)) {
+				contador++;
 			}
 		}
-		return contador;
+		return contador >= t.getC().getCant();
 	}
 
-
-	private boolean isConflict(Turno t) {
-		for(Turno tt : turnos) {
-			if(tt.getFechaHoraI().isBefore(t.getFechaHoraI()) && ) {
-				
-			}
-		}
-		return false;
+	private boolean overlap(Turno a, Turno b) {
+		return a.getFechaHoraI().isBefore(b.getFechaHoraF()) && a.getFechaHoraF().isAfter(b.getFechaHoraI());
 	}
+	
 	
 }
