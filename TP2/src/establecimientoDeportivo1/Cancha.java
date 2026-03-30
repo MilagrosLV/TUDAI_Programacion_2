@@ -12,9 +12,7 @@ public class Cancha {
 	}
 
 	//GETTERS Y SETTERS
-	public String getTipo() {
-		return tipo;
-	}
+	public String getTipo() {return tipo;}
 
 	public int getCant() {
 		return cant;
@@ -23,7 +21,4 @@ public class Cancha {
 	public double getPrecio() {
 		return precioHora;
 	}
-	
-	
-	
 }

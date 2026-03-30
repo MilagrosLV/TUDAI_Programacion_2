@@ -21,6 +21,15 @@ public class Establecimiento {
 	public ArrayList<Usuario> getUsuarios() {
 		return usuarios;
 	}
+	public ArrayList<Usuario> getSocios() {
+		ArrayList<Usuario> socios = new ArrayList<Usuario>();
+		for(Usuario u : usuarios) {
+			if(u.isSocio()) {
+				socios.add(u);
+			}
+		}
+		return socios;
+	}
 	public ArrayList<Cancha> getCancha() {
 		return canchas;
 	}
@@ -32,30 +41,35 @@ public class Establecimiento {
 	public void addUsuario(Usuario u) {
 		if(!getUsuarios().contains(u)) {
 			getUsuarios().add(u);
+			//System.out.println("Usuarios:"+u.getNombre());
 		} else {
-			System.out.println(u+" ya existe en la lista");
+			System.out.println(u.getNombre()+" ya existe en la lista");
 		}
 	}
 	public void addCancha(Cancha u) {
 		if(!getCancha().contains(u)) {
 			getCancha().add(u);
+			//System.out.println("Cancha:"+u.getTipo());
+
 		} else {
-			System.out.println(u+" ya existe en la lista");
+			System.out.println(u.getTipo()+" ya existe en la lista");
 		}
 	}
 	public void addTurno(Turno u) {
 		if(!getAgenda().contains(u)) {
 			if(!canchasOcupadas(u)) {
 				getAgenda().add(u);
+				u.getU().addTurno(u);
+				System.out.println("Turno: "+u.getFechaHoraI()+", $"+u.getPrecio());
 			}else {
-	            System.out.println("No hay canchas disponibles para ese horario.");
+	            System.out.println("No hay cancha de "+u.getC().getTipo()+" disponible para el "+u.getFechaHoraI()+" hs");
 	        }
 		} else {
-			System.out.println(u+" ya existe en la lista");
+			System.out.println("El turno ya existe en la lista");
 		}
 	}
 	
-	private boolean canchasOcupadas(Turno t) {//Chequeo la cantidad de canchas
+	private boolean canchasOcupadas(Turno t) {//Chequeo la cantidad de canchas ocupasdas por su tipo
 		int contador = 0;
 		for(Turno tt : turnos) {
 			if(t.getC().equals(tt.getC()) && overlap(t, tt)) {

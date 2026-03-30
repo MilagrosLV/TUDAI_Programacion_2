@@ -23,11 +23,13 @@ public class Usuario {
 				contador++;
 			}
 		}
-		return contador++ >= MIN_TURNOS_SOCIO;
+		System.out.print(getNombre()+" "+contador+" ");
+		return contador >= MIN_TURNOS_SOCIO;
 	}
 	
 	public void addTurno(Turno t) {
 		this.turnos.add(t);
+		//System.out.println("+");
 	}
 
 	

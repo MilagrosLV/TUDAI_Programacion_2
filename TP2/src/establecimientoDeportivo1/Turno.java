@@ -7,7 +7,8 @@ public class Turno {
 	private Usuario u;
 	private Cancha c;
 	private LocalDateTime fechaHoraI, fechaHoraF;
-	private final double DESCUENTO=0.9, DURACION=1;
+	private final double DESCUENTO=0.9;
+	private final int DURACION=1;
 	
 	
 	public Turno(Usuario u, Cancha c, LocalDateTime fechaHoraI) {
@@ -23,7 +24,7 @@ public class Turno {
 		return fechaHoraF;
 	}
 	public void setFechaHoraF(LocalDateTime fechaHoraI) {
-		this.fechaHoraF = fechaHoraI.plusHours((long) DURACION);
+		this.fechaHoraF = fechaHoraI.plusHours(DURACION);
 	}
 	public Usuario getU() {
 		return u;
@@ -42,10 +43,5 @@ public class Turno {
 	}
 	public double getDESCUENTO() {
 		return DESCUENTO;
-	}
-	
-	//OTROS MÉTODOS
-	
-	
-	
+	}	
 }
