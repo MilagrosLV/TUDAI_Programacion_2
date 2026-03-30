@@ -39,7 +39,7 @@ public class Consultora {
 	public void encuestar(Encuesta e) {
 		if(!encuestada(e)) {
 			addEncuestaRealizada(e);
-			e.getEm().addEncuesta(e);
+			e.encuestar();
 		} else {
 			System.out.println(e.getPer()+" ya respondió la encuesta de "+e.getFor().getTitulo());
 		}
