@@ -1,104 +1,47 @@
 package establecimientoDeportivo;
 
-
-import java.time.*;
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 
 public class Turno {
-	//ATRIBUTOS
-	private LocalDateTime fechaHorarioInicio, fechaHorarioFin, fechaHoraActual = LocalDateTime.now();
-	private int duracionHora;
-	private String tipo, usuario;
-	private boolean hayDisponibiliada;
-	private ArrayList<Cancha> canchas = new ArrayList<Cancha>();
-
-	//CONSTRUCTORES
-	public Turno(LocalDateTime fechaHorarioInicio, int duracionHora, String tipo, String usuario) {
-		this.duracionHora = duracionHora;
-		this.setFechaHorarioInicio(fechaHorarioInicio);
-		this.setTipo(tipo);
-		this.usuario = usuario;
-
+	
+	private Usuario u;
+	private Cancha c;
+	private LocalDateTime fechaHoraI, fechaHoraF;
+	private final double DESCUENTO=0.9;
+	private final int DURACION=1;
+	
+	
+	public Turno(Usuario u, Cancha c, LocalDateTime fechaHoraI) {
+		this.u = u;
+		this.c = c;
+		this.fechaHoraI = fechaHoraI;
+		setFechaHoraF(fechaHoraI);
 	}
-
-	//GETTERS y SETTERS
-	public LocalDateTime getFechaHorarioInicio() { //fechaHorarioInicio
-		return fechaHorarioInicio;
+	
+	
+	//GETTERS Y SETTERS
+	public LocalDateTime getFechaHoraF() {
+		return fechaHoraF;
 	}
-	public void setFechaHorarioInicio(LocalDateTime fechaHorarioInicio) {
-		this.fechaHorarioInicio = fechaHorarioInicio;
-		fechaHorarioFin = fechaHorarioInicio.plusHours(duracionHora);
+	public void setFechaHoraF(LocalDateTime fechaHoraI) {
+		this.fechaHoraF = fechaHoraI.plusHours(DURACION);
 	}
-
-	public int getDuracionHora() { //duracionHora
-		return duracionHora;
+	public Usuario getU() {
+		return u;
 	}
-	public void setDuracionHora(int duracionHora) {
-		this.duracionHora = duracionHora;
+	public Cancha getC() {
+		return c;
 	}
-
-	public LocalDateTime getFechaHorarioFin() { //fechaHorarioFin
-		return fechaHorarioFin;
+	public LocalDateTime getFechaHoraI() {
+		return fechaHoraI;
 	}
-
-	public String getTipo() {
-		return tipo;
-	}
-	public void setTipo(String tipo) {
-		//chequear correctamente el tipo de cancha
-		for(Cancha c : canchas) {
-			if((c.getTipo()).equalsIgnoreCase(tipo)) {
-				this.tipo = tipo;
-			}
+	public double getPrecio() {
+		if(u.isSocio()) {
+			return c.getPrecio()*this.getDESCUENTO();
 		}
+		return c.getPrecio();
 	}
-	public Cancha getTipoCancha() {
-		//convocar cancha
-		for(Cancha c : canchas) {
-			if((c.getTipo()).equalsIgnoreCase(tipo)) {
-				return c;
-			}
-		}
-		return null;
-	}
-
-	public String getUsuario() { //USUARIO
-		return usuario;
-	}
-	public void setUsuario(String usuario) {
-		if()
-		this.usuario = usuario;
-	}
-	
-	
-	public boolean hayDisponibilidad() {
-		if((getTipoCancha()).getDisponibilidad() >= 1) {
-			return true;
-		}
-		return false;
-	}
-	public void setDisponibiliada(boolean hayDisponibiliada) {
-		if(hayDisponibilidad()) {
-			(getTipoCancha()).setDisponibilidad((getTipoCancha()).getDisponibilidad() - 1);
-		}
-		this.hayDisponibiliada = hayDisponibiliada;
-	}
-
-	//OTROS METODOS
-	public void agregarCancha(Cancha c) {
-		canchas.add(c);
-	}
-	
-	//Precio del turno
-	public double getPrecioTurno(Turno r) {
-		
-	}
-	
-	//Disponibilidad de cancha
-	public int getDisponibilidad() {
-		return (getTipoCancha()).getDisponibilidad();
-	}
-	
-
-	
+	public double getDESCUENTO() {
+		return DESCUENTO;
+	}	
 }

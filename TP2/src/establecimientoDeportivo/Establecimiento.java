@@ -1,5 +1,5 @@
 
-package establecimientoDeportivo1;
+package establecimientoDeportivo;
 
 import java.util.ArrayList;
 

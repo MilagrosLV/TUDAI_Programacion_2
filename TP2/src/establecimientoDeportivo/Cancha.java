@@ -1,39 +1,24 @@
 package establecimientoDeportivo;
 
 public class Cancha {
-	//ATRIBUTOS
 	private String tipo;
-	private int disponibilidad;
-	private double precio;
+	private int cant;
+	private double precioHora;
 	
-	//CONSTRUCTOR
-	public Cancha(String tipo, int disponibilidad, double precio) {
+	public Cancha(String tipo, int cant, double precioHora) {
 		this.tipo = tipo;
-		this.disponibilidad = disponibilidad;
-		this.setPrecio(precio);
+		this.cant = cant;
+		this.precioHora = precioHora;
 	}
 
-	//GETTERS y SETTERS
-	public String getTipo() { //TIPO
-		return tipo;
-	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	//GETTERS Y SETTERS
+	public String getTipo() {return tipo;}
+
+	public int getCant() {
+		return cant;
 	}
 
-	public int getDisponibilidad() { //DISPONIBILIDAD
-		return disponibilidad;
+	public double getPrecio() {
+		return precioHora;
 	}
-	public void setDisponibilidad(int disponibilidad) {
-		this.disponibilidad = disponibilidad;
-	}
-
-	public double getPrecio() { //PRECIO
-		return precio;
-	}
-	public void setPrecio(double precio) {
-		this.precio = precio;
-	}
-		
-	
 }
