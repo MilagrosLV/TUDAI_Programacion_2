@@ -6,9 +6,9 @@ public class Formulario {
 	private String titulo;
 	private ArrayList<Pregunta>preguntas;
 	
-	public Formulario(String titulo, ArrayList<Pregunta> preguntas) {
+	public Formulario(String titulo) {
 		this.titulo = titulo;
-		this.preguntas = preguntas;
+		this.preguntas = new ArrayList<>();
 	}
 	
 	public String getTitulo() {

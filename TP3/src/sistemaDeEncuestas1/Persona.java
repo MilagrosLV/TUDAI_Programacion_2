@@ -15,5 +15,12 @@ public class Persona {
 	public String getDni() {
 		return dni;
 	}
+
+	@Override
+	public String toString() {
+		return "Persona [getNombre()=" + getNombre() + ", getDni()=" + getDni() + "]";
+	}
+	
+	
 	
 }

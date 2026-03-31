@@ -23,16 +23,16 @@ public class Consultora {
 	}
 	
 	public void addEncuesta(Encuesta e) {
-		if(getEncuestas().contains(e))
-		getEncuestas().add(e);
+		if(!encuestas.contains(e))
+			encuestas.add(e);
 	}
 	public void addEncuestaRealizada(Encuesta e) {
-		if(getEncuestasRealizadas().contains(e))
+		if(!getEncuestasRealizadas().contains(e))
 		getEncuestasRealizadas().add(e);
 	}
-	public void addEmpleados(Empleado e) {
-		if(getEmpleados().contains(e))
-		getEmpleados().add(e);
+	public void addEmpleado(Empleado e) {
+		if(!empleados.contains(e))
+			empleados.add(e);
 	}
 	
 	//Otros métodos
@@ -41,7 +41,7 @@ public class Consultora {
 			addEncuestaRealizada(e);
 			e.encuestar();
 		} else {
-			System.out.println(e.getPer()+" ya respondió la encuesta de "+e.getFor().getTitulo());
+			System.out.println(e.getPer().getNombre()+" ya respondió la encuesta de "+e.getFor().getTitulo());
 		}
 	}
 
@@ -53,6 +53,13 @@ public class Consultora {
 		}
 		return false;
 	}
+
+	@Override
+	public String toString() {
+		return "Consultora [encuestas=" + encuestas + ", encuestasRealizadas=" + encuestasRealizadas + ", empleados="
+				+ empleados + "]";
+	}
+	
 	
 	
 }

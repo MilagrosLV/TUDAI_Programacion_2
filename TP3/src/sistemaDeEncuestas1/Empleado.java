@@ -6,10 +6,10 @@ public class Empleado extends Persona {
 	private double sueldo;
 	private ArrayList<Encuesta> encuestas;
 	
-	public Empleado(String nombre, String dni, double sueldo, ArrayList<Encuesta> encuestas) {
+	public Empleado(String nombre, String dni, double sueldo) {
 		super(nombre, dni);
 		this.sueldo = sueldo;
-		this.encuestas = encuestas;
+		this.encuestas = new ArrayList<>();
 	}
 
 	public double getSueldo() {
