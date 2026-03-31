@@ -16,24 +16,15 @@ public class Producto {
 		this.color = color;
 	}
 	
-	//GETTERS Y SETTERS
+	//GETTERS 
 	public String getTipo() {
 		return tipo;
-	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
 	}
 	public double getPeso() {
 		return peso;
 	}
-	public void setPeso(double peso) {
-		this.peso = peso;
-	}
 	public double getCostoFabricacion() {
 		return costoFabricacion;
-	}
-	public void setCostoFabricacion(double costoFabricacion) {
-		this.costoFabricacion = costoFabricacion;
 	}
 	public double getValorVenta() {
 		return valorVenta;
@@ -44,15 +35,10 @@ public class Producto {
 	public String getMadera() {
 		return madera;
 	}
-	public void setMadera(String madera) {
-		this.madera = madera;
-	}
 	public String getColor() {
 		return color;
 	}
-	public void setColor(String color) {
-		this.color = color;
-	}
+
 	
 	
 	//OTROS METODOS
