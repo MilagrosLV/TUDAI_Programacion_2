@@ -1,22 +1,38 @@
-import java.util.ArrayList;
-import java.util.List;
-
+package sistemaDeEncuestas;
 
 public class Encuesta {
-	private int id;
+	private Formulario f;
+	private Persona p;
+	private Empleado e;
 	
-	private List<String> preguntas;
-	private int dniEmpleado;
-	private String nombreEmpleado;
-	
-	public Encuesta (int id, int dniEmpleado, String nombreEmpleado) {
-		this.preguntas = new ArrayList<String>();
-		this.id = id;
-		this.dniEmpleado = dniEmpleado;
-		this.nombreEmpleado = nombreEmpleado;
+	public Encuesta(Formulario f, Persona p, Empleado e) {
+		this.f = f;
+		this.p = p;
+		this.e = e;
 	}
-	
-	public void agregarPregunta(String nuevaPregunta) {
 
+	public Formulario getFor() {
+		return f;
 	}
+	public Persona getPer() {
+		return p;
+	}
+	public Empleado getEm() {
+		return e;
+	}
+	
+	public void encuestar() {
+		getEm().addEncuesta(this);
+	}
+
+	@Override
+	public String toString() {
+		return "Encuesta [f=" + f + ", p=" + p + ", e=" + e + "]";
+	}
+	
+	
+	
+	
+	
+	
 }

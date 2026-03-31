@@ -1,4 +1,4 @@
-package sistemaDeEncuestas1;
+package sistemaDeEncuestas;
 
 import java.util.ArrayList;
 

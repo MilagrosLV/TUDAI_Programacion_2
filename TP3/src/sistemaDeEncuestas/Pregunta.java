@@ -1,4 +1,4 @@
-package sistemaDeEncuestas1;
+package sistemaDeEncuestas;
 
 public class Pregunta {
 	private String preg;
