@@ -28,9 +28,5 @@ public class Formulario {
 	@Override
 	public String toString() {
 		return "Formulario [titulo=" + titulo + ", preguntas=" + preguntas + "]";
-	}
-	
-	
-	
-	
+	}	
 }

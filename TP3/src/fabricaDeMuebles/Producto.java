@@ -2,15 +2,15 @@ package fabricaDeMuebles;
 
 public class Producto {
 	//ATRIBUTOS
-	private final double PORCENTAJE_AGREGADO_PRECIO_VENTA = 35;
-	private double peso, costoFabricacion, valorVenta;
+	private double peso, costoFabricacion, valorVenta, margenVenta;
 	private String madera, color, tipo;
 	
 	//CONSTRUCTOR
-	public Producto(String tipo, double peso, double costoFabricacion, String madera, String color) {
+	public Producto(String tipo, double peso, double costoFabricacion, double margenVenta, String madera, String color) {
 		this.tipo = tipo;
 		this.peso = peso;
 		this.costoFabricacion = costoFabricacion;
+		this.margenVenta = margenVenta;
 		this.setValorVenta(valorVenta);
 		this.madera = madera;
 		this.color = color;
@@ -39,7 +39,7 @@ public class Producto {
 		return valorVenta;
 	}
 	public void setValorVenta(double valorVenta) {
-		this.valorVenta = (((PORCENTAJE_AGREGADO_PRECIO_VENTA + 100)*getCostoFabricacion())/100);
+		this.valorVenta = (getCostoFabricacion()*margenVenta);
 	}
 	public String getMadera() {
 		return madera;

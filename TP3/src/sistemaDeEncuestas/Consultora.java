@@ -22,10 +22,7 @@ public class Consultora {
 		return empleados;
 	}
 	
-	public void addEncuesta(Encuesta e) {
-		if(!encuestas.contains(e))
-			encuestas.add(e);
-	}
+	public void addEncuesta(Encuesta e) {if(!encuestas.contains(e))encuestas.add(e);}
 	public void addEncuestaRealizada(Encuesta e) {
 		if(!getEncuestasRealizadas().contains(e))
 		getEncuestasRealizadas().add(e);
