@@ -10,13 +10,9 @@ public class Fabrica {
 		this.muebles = new ArrayList<Producto>();
 	}
 	
-	//GETTERS Y SETTERS
+	//GETTERS 
 	public ArrayList<Producto> getMuebles() {
 		return muebles;
-	}
-
-	public void setMuebles(ArrayList<Producto> muebles) {
-		this.muebles = muebles;
 	}
 	
 	//OTROS METODOS
