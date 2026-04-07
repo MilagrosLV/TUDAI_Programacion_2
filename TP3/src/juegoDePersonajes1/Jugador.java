@@ -42,11 +42,10 @@ public class Jugador {
 			}
 		}
 		
-		int i = 0;
-		if(caracts.get(i).getNivel()<caracts.get(i+1).getNivel()) {
-			System.out.println("Gana: "+getNombre());
-		} else if(caracts.get(i).getNivel()>caracts.get(i+1).getNivel()) {
-			System.out.println("Gana: "+getNombre());
+		if(caracts.getFirst().getNivel()<caracts.getLast().getNivel()) {
+			System.out.println("Gana: 1)"+getNombre());
+		} else if(caracts.getFirst().getNivel()>caracts.getLast().getNivel()) {
+			System.out.println("Gana: 2)"+getNombre());
 		} else {
 			System.out.println("Empate");
 			

@@ -5,12 +5,25 @@ import java.util.ArrayList;
 public class Personaje {
 	private final int CANT_CARACT = 5;
 	private String nombreReal, nombreSuper;
+	private double vs, f, v, p, a, e;
+	private Cualidad c1 = new Cualidad("Vision Nocturna");
+	private Cualidad c2 = new Cualidad("Fuerza");
+	private Cualidad c3 = new Cualidad("Velocidad");
+	private Cualidad c4 = new Cualidad("Peso");
+	private Cualidad c5 = new Cualidad("Altura");
+	private Cualidad c6 = new Cualidad("Edad");
 	private ArrayList<Caracteristica> caracteristicas;
 	
-	public Personaje(String nombreReal, String nombreSuper) {
+	public Personaje(String nombreReal, String nombreSuper, double vs, double f, double v, double p, double a, double e) {
 		this.nombreReal = nombreReal;
 		this.nombreSuper = nombreSuper;
 		this.caracteristicas = new ArrayList<>(getCANT_CARACT());
+		this.addCaracteristica(c1, vs);
+		this.addCaracteristica(c2, f);
+		this.addCaracteristica(c3, v);
+		this.addCaracteristica(c4, p);
+		this.addCaracteristica(c5, a);
+		this.addCaracteristica(c6, e);
 	}
 
 	//GETTERS
@@ -30,7 +43,7 @@ public class Personaje {
 	
 	
 	//Otros métodos
-	public void addCracteristica(Cualidad c, int lvl) {
+	public void addCaracteristica(Cualidad c, double lvl) {
 		boolean repite=false;
 		for(Caracteristica cc : caracteristicas) {
 			if(cc.getC().equals(c)) {

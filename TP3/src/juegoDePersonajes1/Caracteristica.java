@@ -2,9 +2,9 @@ package juegoDePersonajes1;
 
 public class Caracteristica {
 	private Cualidad c;
-	private int nivel;
+	private double nivel;
 	
-	public Caracteristica(Cualidad c, int nivel) {
+	public Caracteristica(Cualidad c, double nivel) {
 		this.c = c;
 		this.nivel = nivel;
 	}
@@ -12,7 +12,7 @@ public class Caracteristica {
 	public Cualidad getC() {
 		return c;
 	}
-	public int getNivel() {
+	public double getNivel() {
 		return nivel;
 	}
 

@@ -63,7 +63,7 @@ public class Juego {
 	private void repartirMazo() {
 		int index = 0;
 		if(isJuegoSolitario()) {
-			jugadores.get(index).addPersonaje(personajes.get(index));
+			jugadores.getFirst().addPersonaje(personajes.getFirst());
 			jugadores.get(index).addPersonaje(personajes.get(++index));
 		} else {
 			for(Jugador jj: jugadores) {
@@ -95,24 +95,24 @@ public class Juego {
 	public void enfrentar(ArrayList<Jugador> jj) {
 		int ij = 0;
 		//Cualidad de enfrentamiento random
-		Cualidad c=getCualidadRandom(jj.get(ij));
+		Cualidad c=getCualidadRandom(jj.getFirst());
 	
 		if(isJuegoSolitario()) {
-			jj.get(ij).enfrentamientoSolitario(c);
+			jj.getFirst().enfrentamientoSolitario(c);
 	
 		} 
 		else {
 			boolean hayGanador=false;
 			while(!hayGanador) {
-				if(getCaracteristicaPersonaje(jj.get(ij), c).getNivel()<getCaracteristicaPersonaje(jj.get(ij+1), c).getNivel()) {
+				if(getCaracteristicaPersonaje(jj.getFirst(), c).getNivel()<getCaracteristicaPersonaje(jj.get(ij+1), c).getNivel()) {
 					hayGanador=true;
 					System.out.println("Gana: "+jj.get(ij+1).getNombre());
-				}else if(getCaracteristicaPersonaje(jj.get(ij), c).getNivel()>getCaracteristicaPersonaje(jj.get(ij+1), c).getNivel()) {
+				}else if(getCaracteristicaPersonaje(jj.getFirst(), c).getNivel()>getCaracteristicaPersonaje(jj.get(ij+1), c).getNivel()) {
 					hayGanador=true;
 					System.out.println("Gana: "+jj.get(ij).getNombre());
 				} else {
 					System.out.println("Empate");
-					c=getCualidadRandom(jj.get(ij));
+					c=getCualidadRandom(jj.getFirst());
 				}
 			}
 		}
