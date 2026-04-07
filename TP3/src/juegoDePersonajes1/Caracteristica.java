@@ -15,6 +15,11 @@ public class Caracteristica {
 	public int getNivel() {
 		return nivel;
 	}
+
+	@Override
+	public String toString() {
+		return "Caracteristica [c=" + c + ", nivel=" + nivel + "]";
+	}
 	
 	
 }
