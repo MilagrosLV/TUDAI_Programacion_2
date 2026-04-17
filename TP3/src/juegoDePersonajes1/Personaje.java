@@ -1,6 +1,7 @@
 package juegoDePersonajes1;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Personaje {
 	private final int CANT_CARACT = 5;
@@ -61,5 +62,20 @@ public class Personaje {
 		return "Personaje [nombreReal=" + nombreReal + ", nombreSuper=" + nombreSuper + ", caracteristicas="
 				+ caracteristicas + "]";
 	}
-	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null || getClass() != obj.getClass())
+			return false;
+		Personaje other = (Personaje) obj;
+		return Objects.equals(nombreReal, other.nombreReal)
+				&& Objects.equals(nombreSuper, other.nombreSuper);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(nombreReal, nombreSuper);
+	}
 }

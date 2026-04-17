@@ -10,12 +10,18 @@ public class Main {
 		
 		Jugador j1 = new Jugador("Juan");
 		Jugador j2 = new Jugador("Pedro");
-		Jugador j3 = new Jugador("Maria");
+		//Jugador j3 = new Jugador("Maria");
 
 		Juego jj = new Juego();
 		jj.addPersonaje(p3);jj.addPersonaje(p2);jj.addPersonaje(p1);
+		//Solitario
 		jj.addJugador(j1);
 		jj.jugar();
+		
+		//Multijugador
+		jj.addJugador(j2);
+		jj.jugar();
+		
 
 
 	}

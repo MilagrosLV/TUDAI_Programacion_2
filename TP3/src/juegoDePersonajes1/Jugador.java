@@ -1,9 +1,6 @@
 package juegoDePersonajes1;
 
 import java.util.ArrayList;
-import java.util.List;
-
-
 
 public class Jugador {
 	private String nombre;
@@ -42,16 +39,19 @@ public class Jugador {
 			}
 		}
 		
-		if(caracts.getFirst().getNivel()<caracts.getLast().getNivel()) {
-			System.out.println("Gana: 1)"+getNombre());
-		} else if(caracts.getFirst().getNivel()>caracts.getLast().getNivel()) {
-			System.out.println("Gana: 2)"+getNombre());
+		if(caracts.get(0).getNivel() < caracts.get(1).getNivel()) {
+			System.out.println("Gana: 1)" + getNombre());
+		
+		} else if(caracts.get(0).getNivel() > caracts.get(1).getNivel()) {
+			System.out.println("Gana: 2)" + getNombre());
+		
 		} else {
 			System.out.println("Empate");
 			
-			ArrayList<Jugador> j = new ArrayList<>(List.of(this));
+			/*ArrayList<Jugador> j = new ArrayList<>();
+			j.add(this);
 			Juego j1 = new Juego(j, personajes);
-			j1.enfrentar(j);
+			j1.enfrentar(j);*/
 		}
 		
 	}
