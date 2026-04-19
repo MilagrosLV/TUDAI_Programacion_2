@@ -6,7 +6,7 @@ public class Main {
 		
 		Alarma a1 = new Alarma(true, false, false);
 		
-		System.out.println(a1.isVidrioRoto());
+		
 	}
 
 }
