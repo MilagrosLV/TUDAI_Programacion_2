@@ -2,12 +2,12 @@ package avicola1;
 
 import java.time.LocalDate;
 
-public abstract class ProductoCongelado extends Producto {
+public class ProductoRefrigerado extends Producto {
 	private int codigoSupervision;
 	private double tempMantenimiento;
 	
 	
-	public ProductoCongelado(String nombre, LocalDate fechaVencimiento, LocalDate fechaEnvasado, int lote, String granjaOrigen,
+	public ProductoRefrigerado(String nombre, LocalDate fechaVencimiento, LocalDate fechaEnvasado, int lote, String granjaOrigen,
 			int codigoSupervision, double tempMantenimiento) {
 		super(nombre, fechaVencimiento, fechaEnvasado, lote, granjaOrigen);
 		this.codigoSupervision = codigoSupervision;
@@ -30,7 +30,4 @@ public abstract class ProductoCongelado extends Producto {
 		return super.toString() + " [codigoSupervision=" + codigoSupervision + ", tempMantenimiento=" + tempMantenimiento
 				+ "]";
 	}
-	
-	
-
 }
