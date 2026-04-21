@@ -16,8 +16,8 @@ public class ProductoCongeladoAgua extends ProductoCongelado{
 	}
 
 	@Override
-	public String toString() {
-		return super.toString() + "  [grSal/Litro=" + grSalPorLitro + "]";
+	public String obtenerEtiqueta() {
+		return super.obtenerEtiqueta() + " grSal/Litro=" + grSalPorLitro + ".";
 	}
 	
 	

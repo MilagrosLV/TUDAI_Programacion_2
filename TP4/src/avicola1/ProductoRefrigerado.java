@@ -26,8 +26,7 @@ public class ProductoRefrigerado extends Producto {
 
 
 	@Override
-	public String toString() {
-		return super.toString() + " [codigoSupervision=" + codigoSupervision + ", tempMantenimiento=" + tempMantenimiento
-				+ "]";
+	public String obtenerEtiqueta() {
+		return super.obtenerEtiqueta() + " codigoSupervision=" + codigoSupervision + ", tempMantenimiento=" + tempMantenimiento;
 	}
 }

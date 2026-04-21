@@ -19,16 +19,19 @@ public class Empresa {
 		}
 	}
 	
-	@Override
-	public String toString() {
-		return "Empresa [productos=" + productos + "]";
-	}
 
 	public void obtenerEtiquetaProducto(Producto p) {
 		if(getProductos().contains(p)) {
-			System.out.println("Etiqueta del producto: "+ p.toString());
+			System.out.println("Etiqueta del producto: "+ p.obtenerEtiqueta());
 		} else {
 			System.out.println("El producto no se encuentra en la empresa.");
+		}
+	}
+	
+	public void mostrarListaProductos() {
+		System.out.println("Listado de productos en la empresa:");
+		for(Producto pp : productos) {
+			System.out.println(pp.obtenerEtiqueta());
 		}
 	}
 	

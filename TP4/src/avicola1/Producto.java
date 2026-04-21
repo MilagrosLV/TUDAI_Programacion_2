@@ -32,10 +32,10 @@ public abstract class Producto {
 	}
 
 
-	@Override
-	public String toString() {
-		return "Producto [nombre=" + nombre + ", fechaVencimiento=" + fechaVencimiento + ", fechaEnvasado=" + fechaEnvasado + ", lote=" + lote
-				+ ", granjaOrigen=" + granjaOrigen + "]";
+	
+	public String obtenerEtiqueta() {
+		return "Producto= " + nombre + ", fechaVencimiento=" + fechaVencimiento + ", fechaEnvasado=" + fechaEnvasado + ", lote=" + lote
+				+ ", Origen=" + granjaOrigen + ", ";
 	}
 	
 	

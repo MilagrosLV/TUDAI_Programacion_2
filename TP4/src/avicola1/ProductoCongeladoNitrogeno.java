@@ -27,9 +27,8 @@ public class ProductoCongeladoNitrogeno extends ProductoCongelado{
 
 
 	@Override
-	public String toString() {
-		return super.toString() + " [metodoCongelacion=" + metodoCongelacion + ", exposiciónSeg=" + exposiciónSeg
-				+ "]";
+	public String obtenerEtiqueta() {
+		return super.obtenerEtiqueta() + " metodoCongelacion=" + metodoCongelacion + ", exposiciónSeg=" + exposiciónSeg;
 	}
 	
 	

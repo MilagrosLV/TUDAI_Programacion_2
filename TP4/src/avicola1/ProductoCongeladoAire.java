@@ -39,8 +39,8 @@ public class ProductoCongeladoAire extends ProductoCongelado{
 	}
 
 	@Override
-	public String toString() {
-		return super.toString() + " [N=" + N + ", O=" + O + ", CO2=" + CO2 + ", H2O=" + H2O + "]";
+	public String obtenerEtiqueta() {
+		return super.obtenerEtiqueta() + " [N=" + N + ", O=" + O + ", CO2=" + CO2 + ", H2O=" + H2O + "]";
 	}
 	
 	

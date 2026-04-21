@@ -20,14 +20,12 @@ public class Main {
 		avicola.addProducto(nuggets);
 		avicola.addProducto(pescado);
 
-		/*
-		System.out.println("Productos en la empresa:");
-		for (Producto producto : avicola.getProductos()) {
-			System.out.println(producto);
-		}
-		*/
+
+		//Testeo de etiqueta
 		//System.out.println(avicola);
-		avicola.obtenerEtiquetaProducto(pescado);
+		//avicola.obtenerEtiquetaProducto(pescado);
+		avicola.mostrarListaProductos();
+		
 
 	}
 
