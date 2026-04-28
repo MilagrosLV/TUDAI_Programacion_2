@@ -2,6 +2,11 @@ package modernizandoSobreroSeleccionador;
 
 import java.util.ArrayList;
 
+/**
+ * Casa que tiene una enemistad con otra casa.
+ * Si un alumno cumple las condiciones para esta casa,
+ * no puede ser asignado a la casa enemiga (y viceversa).
+ */
 public class CasaEnemistada extends Casa {
 	//ATRIBUTOS
 	private Casa casaEnemiga;

@@ -76,10 +76,22 @@ public class Alumno {
 	public void agregarCasa(Casa casa) {
 		this.c = casa;
 	}
-
 	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null || getClass() != obj.getClass()) return false;
+		Alumno other = (Alumno) obj;
+		return nombre.equals(other.nombre);
+	}
 	
+	@Override
+	public int hashCode() {
+		return nombre.hashCode();
+	}
 	
-	
-	
+	@Override
+	public String toString() {
+		return nombre;
+	}
 }

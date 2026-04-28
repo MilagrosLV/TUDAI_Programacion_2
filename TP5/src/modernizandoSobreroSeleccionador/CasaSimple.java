@@ -2,6 +2,10 @@ package modernizandoSobreroSeleccionador;
 
 import java.util.ArrayList;
 
+/**
+ * Casa que solo requiere que el alumno posea todas las cualidades 
+ * y que haya espacio disponible en la casa.
+ */
 public class CasaSimple extends Casa {
 
 	public CasaSimple(String nombre, int cant_max_alumnos, ArrayList<Cualidad> cualidades) {

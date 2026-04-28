@@ -17,5 +17,22 @@ public class Cualidad {
 		this.cualidad = cualidad.toLowerCase();
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null || getClass() != obj.getClass()) return false;
+		Cualidad other = (Cualidad) obj;
+		return cualidad.equals(other.cualidad);
+	}
+	
+	@Override
+	public int hashCode() {
+		return cualidad.hashCode();
+	}
+	
+	@Override
+	public String toString() {
+		return cualidad;
+	}
 	
 }

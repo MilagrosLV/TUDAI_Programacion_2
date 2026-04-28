@@ -54,10 +54,14 @@ public class Main {
 		sombrero.sortear(a9);sombrero.sortear(a10);sombrero.sortear(a11);sombrero.sortear(a12);
 		sombrero.sortear(a13);sombrero.sortear(a14);sombrero.sortear(a15);sombrero.sortear(a16);
 
-
-		System.out.println(a3.getNombre()+" ");
-
-
+		// Mostrar resumen del sorteo
+		System.out.println("\n=== RESUMEN DEL SORTEO ===");
+		for(Casa casa : sombrero.getCasas()) {
+			System.out.println("\n" + casa.getNombre() + " (" + casa.cantAlumnos() + "/" + casa.getCant_max_alumnos() + " alumnos):");
+			for(Alumno alumno : casa.getAlumnos()) {
+				System.out.println("  - " + alumno.getNombre());
+			}
+		}
 	}
 
 }

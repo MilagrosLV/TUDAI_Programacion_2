@@ -2,6 +2,11 @@ package modernizandoSobreroSeleccionador;
 
 import java.util.ArrayList;
 
+/**
+ * Clase abstracta que representa una casa de Hogwarts.
+ * Cada casa tiene un nombre, cantidad máxima de alumnos, 
+ * un conjunto de cualidades requeridas y un conjunto de alumnos.
+ */
 public abstract class Casa {
 	//ATRIBUTOS
 	private String nombre;
@@ -63,14 +68,23 @@ public abstract class Casa {
 	public void asignar(Alumno a) {
 		if(cumpleCondiciones(a)) {
 			this.agregarAlumno(a);
-			a.agregarCasa(this);
-			
 			System.out.println(a.getNombre()+" "+this.getNombre()+"!!!");
 		}
 	}
 	public abstract boolean cumpleCondiciones(Alumno a);
 	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null || getClass() != obj.getClass()) return false;
+		Casa other = (Casa) obj;
+		return nombre.equals(other.nombre);
+	}
 	
+	@Override
+	public int hashCode() {
+		return nombre.hashCode();
+	}
 	
 	@Override
 	public String toString() {
