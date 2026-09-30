@@ -9,8 +9,11 @@ public class Medicamento {
 	private double precio;
 	private Set<String> trataSintomas;
 	
-	public Medicamento(String nombre, String laboratorio) {
-		this.nombre=nombre; this.laboratorio=laboratorio;
+	public Medicamento(String nombre, String laboratorio, double precio) {
+		if (nombre == null || laboratorio == null) {
+            throw new IllegalArgumentException("Nombre y laboratorio no pueden ser nulos.");
+        }
+		this.nombre=nombre; this.laboratorio=laboratorio; this.precio=precio;
 		trataSintomas=new HashSet<>();
 	}
 	
@@ -22,7 +25,7 @@ public class Medicamento {
 	//adder Sintoma
 	public void agregarSintoma(String s) {
 		if(s==null) throw new NullPointerException("No se puede agregar - Sintoma nulo.");
-		trataSintomas.add(s);
+		trataSintomas.add(s.toLowerCase());
 	}
 	
 	//boolean en vez de getter
@@ -48,6 +51,9 @@ public class Medicamento {
 	@Override
 	public int hashCode() { return Objects.hash(nombre, laboratorio, precio);}
 
-	
+	@Override
+    public String toString() {
+        return nombre + " (" + laboratorio + ") - $" + precio;
+    }
 
 }
