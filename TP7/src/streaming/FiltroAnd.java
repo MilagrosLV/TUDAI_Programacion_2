@@ -10,7 +10,7 @@ public class FiltroAnd extends Filtro {
 	}
 
     @Override
-    public boolean eval(Pelicula p){
-	  return f1.eval(p) && f2.eval(p);
+    public boolean cumple(Pelicula p){
+	  return f1.cumple(p) && f2.cumple(p);
 	}
 }

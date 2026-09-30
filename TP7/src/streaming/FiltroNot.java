@@ -7,7 +7,7 @@ public class FiltroNot extends Filtro {
 	  this.f = f;
 	}
 	  
-	public boolean eval(Pelicula p){
-	  return !f.eval(p);
+	public boolean cumple(Pelicula p){
+	  return !f.cumple(p);
 	}
 }
