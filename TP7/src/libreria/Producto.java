@@ -6,15 +6,15 @@ import java.util.Set;
 
 public class Producto {
 	private String nombre, autor, resumen;
-	private double precio;
+	private Calculador calculador;
 	private int cantPP;
 	private Set<String> generos;
 	
-	public Producto(String nombre, String autor, String resumen, double precio, int cantPP) {
+	public Producto(String nombre, String autor, String resumen, Calculador calculador, int cantPP) {
 		if(nombre == null || autor == null || resumen == null) throw new IllegalArgumentException("Nombre, autor o resumen no pueden ser nulos.");
 		this.nombre=nombre.toLowerCase();
 		this.autor=autor.toLowerCase();
-		this.precio=precio;
+		this.calculador=calculador;
 		this.resumen=resumen;
 		this.cantPP=cantPP;
 		generos = new HashSet<>();
@@ -24,12 +24,12 @@ public class Producto {
 	public String getNombre() {return nombre;}
 	public String getAutor() {return autor;}
 	public String getResumen() {return resumen;	}
-	public double getPrecio() {return precio;	}
+	public double getPrecio() {return calculador.getPrecio(this);	}
 	public int getCantPP() {return cantPP;	}
-	public Set<String> getGeneros(){return Set.copyOf(this.generos);}
+	public int getCantGeneros(){return generos.size();}
 	
 	//setters
-	public void setPrecio(double precio) { this.precio=precio;}
+	public void setCalculador(Calculador calculador) { this.calculador=calculador;}
 	
 	
 	//add a generos
