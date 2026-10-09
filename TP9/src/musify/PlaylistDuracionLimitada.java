@@ -12,8 +12,7 @@ public class PlaylistDuracionLimitada extends Playlist {
 	@Override
 	public void agregarElemento(Elemento e) {
 		if(e == null) throw new NullPointerException("No se puede gregar elemento nulo.");
-		else if(e.getDuracionSeg() + this.getDuracionSeg() > limite) throw new IllegalArgumentException ("No se puede agregar. No queda tiempo disponible");
-		elementos.add(e);
+		else if(e.getDuracionSeg() + this.getDuracionSeg() <= limite) elementos.add(e);
 	}
 
 }
